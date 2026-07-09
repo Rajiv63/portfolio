@@ -1,0 +1,66 @@
+<section class="section section-alt page-top">
+  <div class="container">
+    <div class="section-header animate-fade-up">
+      <span class="section-eyebrow">Credentials</span>
+      <h1>Certifications</h1>
+      <p>Professional certificates and courses that validate my technical skills</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="certs-grid">
+      @for (cert of certs; track cert.id; let i = $index) {
+        <div class="cert-card card animate-fade-up" [style.animation-delay]="(i * 100) + 'ms'">
+          <div class="cert-top" [style.background]="cert.color + '12'">
+            <div class="cert-icon" [style.background]="cert.color + '22'" [style.color]="cert.color">
+              {{ cert.icon }}
+            </div>
+            <div class="cert-year">{{ cert.date }}</div>
+          </div>
+          <div class="cert-body">
+            <h3>{{ cert.title }}</h3>
+            <div class="cert-issuer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+              </svg>
+              <span>{{ cert.issuer }}</span>
+            </div>
+            <div class="cert-skills">
+              @for (s of cert.skills; track s) {
+                <span class="skill-tag" [style.color]="cert.color" [style.border-color]="cert.color + '50'">{{ s }}</span>
+              }
+            </div>
+          </div>
+          <div class="cert-footer" [style.border-top-color]="cert.color + '30'">
+            <span class="verified-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              Verified Certificate
+            </span>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Stats Row -->
+    <div class="cert-stats animate-fade-up">
+      <div class="stat-item">
+        <div class="stat-num">{{ certs.length }}</div>
+        <div class="stat-lbl">Total Certificates</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">4+</div>
+        <div class="stat-lbl">Platforms</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">2023–2024</div>
+        <div class="stat-lbl">Active Learning</div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,29 @@
+<section class="section section-alt page-top">
+  <div class="container">
+    <div class="section-header animate-fade-up">
+      <span class="section-eyebrow">Tech Stack</span>
+      <h1>Skills & Technologies</h1>
+      <p>A comprehensive overview of the technologies, frameworks, and tools I work with</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="skills-grid">
+      @for (cat of categories; track cat.name; let i = $index) {
+        <app-skills-card [category]="cat" [delay]="i * 120"></app-skills-card>
+      }
+    </div>
+
+    <!-- Tools Banner -->
+    <div class="tools-banner animate-fade-up">
+      <h3>Also Comfortable With</h3>
+      <div class="tools-row">
+        @for (tool of tools; track tool) {
+          <span class="tool-chip">{{ tool }}</span>
+        }
+      </div>
+    </div>
+  </div>
+</section>

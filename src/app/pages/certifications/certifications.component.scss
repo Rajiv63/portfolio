@@ -1,0 +1,54 @@
+.page-top { padding-bottom: 0; }
+.certs-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  @media (max-width: 1024px) { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 600px) { grid-template-columns: 1fr; }
+}
+.cert-card { display: flex; flex-direction: column; padding: 0; overflow: hidden; }
+.cert-top {
+  padding: 28px 24px; display: flex; align-items: center;
+  justify-content: space-between;
+}
+.cert-icon {
+  width: 56px; height: 56px; border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+}
+.cert-year {
+  font-family: var(--font-display); font-size: 0.8rem; font-weight: 700;
+  color: var(--text-muted); background: var(--white);
+  padding: 4px 10px; border-radius: var(--radius-full); border: 1px solid var(--border);
+}
+.cert-body { padding: 20px 24px; flex: 1; }
+h3 { font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 10px; line-height: 1.4; }
+.cert-issuer {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; font-weight: 500;
+  svg { width: 14px; height: 14px; color: var(--primary); flex-shrink: 0; }
+}
+.cert-skills { display: flex; flex-wrap: wrap; gap: 6px; }
+.skill-tag {
+  font-family: var(--font-display); font-size: 0.72rem; font-weight: 600;
+  padding: 3px 10px; border: 1.5px solid; border-radius: var(--radius-full);
+  background: transparent;
+}
+.cert-footer {
+  padding: 14px 24px; border-top: 1.5px solid;
+}
+.verified-badge {
+  display: flex; align-items: center; gap: 6px;
+  font-family: var(--font-display); font-size: 0.75rem; font-weight: 600;
+  color: #16a34a;
+  svg { width: 14px; height: 14px; }
+}
+
+.cert-stats {
+  margin-top: 64px; display: flex; align-items: center; justify-content: center;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius-xl); padding: 32px 48px;
+  box-shadow: var(--shadow-card);
+  @media (max-width: 600px) { flex-wrap: wrap; padding: 24px; gap: 20px; .stat-divider { display: none; } }
+}
+.stat-item { flex: 1; text-align: center; padding: 0 24px; }
+.stat-num { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 6px; }
+.stat-lbl { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
+.stat-divider { width: 1px; height: 48px; background: var(--border); flex-shrink: 0; }

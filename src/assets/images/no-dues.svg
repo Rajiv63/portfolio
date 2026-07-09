@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" fill="none">
+  <rect width="400" height="240" fill="#e0f2fe"/>
+  <rect x="100" y="30" width="200" height="170" rx="8" fill="#0ea5e9" opacity="0.15" stroke="#0ea5e9" stroke-width="2"/>
+  <line x1="130" y1="80" x2="270" y2="80" stroke="#0ea5e9" stroke-width="2.5"/>
+  <line x1="130" y1="105" x2="270" y2="105" stroke="#0ea5e9" stroke-width="2.5"/>
+  <line x1="130" y1="130" x2="220" y2="130" stroke="#0ea5e9" stroke-width="2.5"/>
+  <circle cx="270" cy="155" r="35" fill="#0ea5e9" opacity="0.2" stroke="#0ea5e9" stroke-width="2"/>
+  <polyline points="252,155 262,167 288,142" stroke="#0ea5e9" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <text x="200" y="218" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0ea5e9" font-weight="600">No Dues System</text>
+</svg>

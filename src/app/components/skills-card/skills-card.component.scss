@@ -1,0 +1,28 @@
+.skills-card {
+  padding: 32px;
+  animation: fadeInUp 0.7s cubic-bezier(0.4,0,0.2,1) both;
+}
+.card-header {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 28px; padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+.category-icon {
+  font-size: 1.5rem; width: 48px; height: 48px;
+  background: var(--primary-light); border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+}
+h3 { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); }
+.skills-list { display: flex; flex-direction: column; gap: 18px; }
+.skill-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.skill-name { font-family: var(--font-display); font-size: 0.9rem; font-weight: 600; color: var(--text-primary); }
+.skill-level {
+  font-family: var(--font-display); font-size: 0.78rem; font-weight: 700;
+  color: var(--text-muted); background: var(--bg-section);
+  padding: 2px 8px; border-radius: var(--radius-full);
+}
+.skill-bar { height: 6px; background: var(--bg-section); border-radius: var(--radius-full); overflow: hidden; }
+.skill-fill {
+  height: 100%; border-radius: var(--radius-full);
+  transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
+}

@@ -1,0 +1,160 @@
+<div class="form-wrapper">
+  <!-- Success State -->
+  @if (submitState === "success") {
+    <div class="result-state success animate-scale-in">
+      <div class="result-icon">✅</div>
+      <h3>Message Sent!</h3>
+      <p>Thanks for reaching out, Rajiv will get back to you soon.</p>
+      <button class="btn btn-outline" (click)="reset()">Send Another</button>
+    </div>
+  }
+
+  <!-- Error State -->
+  @if (submitState === "error") {
+    <div class="result-state error animate-scale-in">
+      <div class="result-icon">❌</div>
+      <h3>Oops!</h3>
+      <p>{{ errorMessage }}</p>
+      <a href="mailto:rajivshukla6342@gmail.com" class="btn btn-primary"
+        >Email Directly</a
+      >
+      <button class="btn btn-outline" (click)="reset()">Try Again</button>
+    </div>
+  }
+
+  <!-- Form -->
+  @if (submitState === "idle" || submitState === "loading") {
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+      <div class="form-row">
+        <!-- Name -->
+        <div class="form-group" [class.invalid]="isInvalid('name')">
+          <label for="name">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            Full Name
+          </label>
+          <input
+            id="name"
+            type="text"
+            formControlName="name"
+            placeholder="Rajiv Shukla"
+          />
+          @if (isInvalid("name")) {
+            <span class="error-msg">{{ getError("name") }}</span>
+          }
+        </div>
+
+        <!-- Email -->
+        <div class="form-group" [class.invalid]="isInvalid('email')">
+          <label for="email">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+              />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            Email Address
+          </label>
+          <input
+            id="email"
+            type="email"
+            formControlName="email"
+            placeholder="you@company.com"
+          />
+          @if (isInvalid("email")) {
+            <span class="error-msg">{{ getError("email") }}</span>
+          }
+        </div>
+      </div>
+
+      <!-- Subject -->
+      <div class="form-group" [class.invalid]="isInvalid('subject')">
+        <label for="subject">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="8" y1="6" x2="21" y2="6" />
+            <line x1="8" y1="12" x2="21" y2="12" />
+            <line x1="8" y1="18" x2="21" y2="18" />
+            <line x1="3" y1="6" x2="3.01" y2="6" />
+            <line x1="3" y1="12" x2="3.01" y2="12" />
+            <line x1="3" y1="18" x2="3.01" y2="18" />
+          </svg>
+          Subject
+        </label>
+        <select id="subject" formControlName="subject">
+          <option value="" disabled>Select a subject…</option>
+          @for (s of subjects; track s) {
+            <option [value]="s">{{ s }}</option>
+          }
+        </select>
+        @if (isInvalid("subject")) {
+          <span class="error-msg">Please select a subject.</span>
+        }
+      </div>
+
+      <!-- Message -->
+      <div class="form-group" [class.invalid]="isInvalid('message')">
+        <label for="message">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+            />
+          </svg>
+          Message
+        </label>
+        <textarea
+          id="message"
+          formControlName="message"
+          rows="5"
+          placeholder="Tell Rajiv about the opportunity, project, or question…"
+        ></textarea>
+        @if (isInvalid("message")) {
+          <span class="error-msg">{{ getError("message") }}</span>
+        }
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-primary submit-btn"
+        [disabled]="submitState === 'loading'"
+      >
+        @if (submitState === "loading") {
+          <span class="spinner"></span>
+          Sending…
+        } @else {
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="22" y1="2" x2="11" y2="13" />
+            <polygon points="22 2 15 22 11 13 2 9 22 2" />
+          </svg>
+          Send Message
+        }
+      </button>
+    </form>
+  }
+</div>
