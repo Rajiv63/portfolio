@@ -10,6 +10,11 @@ dist/
 .env
 .env.local
 
+# Angular environment files
+src/environments/environment.ts
+src/environments/environment.development.ts
+src/environments/*.local.ts
+
 # IDE
 .vscode/
 .idea/
@@ -22,5 +27,3 @@ dist/
 # OS
 .DS_Store
 Thumbs.db
-
-.serives
