@@ -11,10 +11,10 @@ import { FirebaseService } from '../../services/firebase.service';
 })
 export class AboutComponent implements OnInit {
   highlights = [
-    { icon: '🎓', label: 'Education', value: 'B.Tech IT, GGSIPU' },
-    { icon: '💼', label: 'Internships', value: '2 Completed' },
-    { icon: '🚀', label: 'Projects', value: '3+ Live Apps' },
-    { icon: '📍', label: 'Location', value: 'New Delhi, India' }
+    { icon: 'school', label: 'Education', value: 'B.Tech IT, GGSIPU' },
+    { icon: 'work', label: 'Internships', value: '2 Completed' },
+    { icon: 'rocket_launch', label: 'Projects', value: '3+ Live Apps' },
+    { icon: 'location_on', label: 'Location', value: 'New Delhi, India' }
   ];
 
   constructor(private firebase: FirebaseService) {}

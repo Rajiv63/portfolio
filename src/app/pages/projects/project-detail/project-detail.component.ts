@@ -13,7 +13,8 @@ import { FirebaseService } from '../../../services/firebase.service';
   styleUrls: ['./project-detail.component.scss']
 })
 export class ProjectDetailComponent implements OnInit {
-  project?: Project;
+
+  project: Project | null = null;
   otherProjects: Project[] = [];
 
   constructor(
@@ -23,13 +24,30 @@ export class ProjectDetailComponent implements OnInit {
     private firebase: FirebaseService
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      const slug = params.get('slug') ?? '';
-      this.project = this.portfolio.getProjectBySlug(slug);
-      if (!this.project) { this.router.navigate(['/projects']); return; }
-      this.otherProjects = this.portfolio.getProjects().filter(p => p.slug !== slug);
-      this.firebase.trackProjectView(this.project.title);
+      const slug = params.get('slug');
+
+      if (!slug) {
+        this.router.navigate(['/projects']);
+        return;
+      }
+
+      const currentProject = this.portfolio.getProjectBySlug(slug);
+
+      if (!currentProject) {
+        this.router.navigate(['/projects']);
+        return;
+      }
+
+      this.project = currentProject;
+
+      // excluding current project + online-no-dues from the "other projects" list
+      this.otherProjects = this.portfolio
+        .getProjects()
+        .filter(p => p.slug !== slug && p.slug !== 'online-no-dues');
+
+      this.firebase.trackProjectView(currentProject.title);
     });
   }
 }

@@ -1,51 +1,70 @@
 <div class="project-card card" [style.animation-delay]="delay + 'ms'">
-
-  <!-- Top accent bar -->
+  <!-- top accent bar -->
   <div class="card-accent" [style.background]="project.color"></div>
 
-  <!-- Illustration area -->
+  <!-- illustration -->
   <div class="card-visual" [style.background]="project.color + '12'">
     <div class="project-icon" [style.color]="project.color">
-      @if (project.slug === 'campus-vidyalaya') {
-        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="8" y="20" width="48" height="36" rx="3"/>
-          <path d="M4 26 L32 8 L60 26"/>
-          <rect x="24" y="36" width="16" height="20" rx="2"/>
-          <rect x="14" y="28" width="10" height="10" rx="1"/>
-          <rect x="40" y="28" width="10" height="10" rx="1"/>
+      @if (project.slug === "campus-vidyalaya") {
+        <svg
+          viewBox="0 0 64 64"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+        >
+          <rect x="8" y="20" width="48" height="36" rx="3" />
+          <path d="M4 26 L32 8 L60 26" />
+          <rect x="24" y="36" width="16" height="20" rx="2" />
+          <rect x="14" y="28" width="10" height="10" rx="1" />
+          <rect x="40" y="28" width="10" height="10" rx="1" />
         </svg>
       }
-      @if (project.slug === 'online-no-dues') {
-        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="10" y="6" width="44" height="52" rx="4"/>
-          <line x1="20" y1="20" x2="44" y2="20"/>
-          <line x1="20" y1="30" x2="44" y2="30"/>
-          <line x1="20" y1="40" x2="36" y2="40"/>
-          <circle cx="46" cy="46" r="10" fill="currentColor" stroke="none" opacity="0.15"/>
-          <polyline points="40,46 44,50 52,42" stroke-width="2"/>
-        </svg>
-      }
-      @if (project.slug === 'seat-allocation') {
-        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="6" y="14" width="52" height="40" rx="3"/>
-          <line x1="6" y1="26" x2="58" y2="26"/>
-          <line x1="6" y1="38" x2="58" y2="38"/>
-          <line x1="22" y1="14" x2="22" y2="54"/>
-          <line x1="42" y1="14" x2="42" y2="54"/>
-          <rect x="26" y="29" width="12" height="8" rx="1" fill="currentColor" opacity="0.2"/>
-          <rect x="10" y="17" width="8" height="6" rx="1" fill="currentColor" opacity="0.3"/>
+      @if (project.slug === "seat-allocation") {
+        <svg
+          viewBox="0 0 64 64"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+        >
+          <rect x="6" y="14" width="52" height="40" rx="3" />
+          <line x1="6" y1="26" x2="58" y2="26" />
+          <line x1="6" y1="38" x2="58" y2="38" />
+          <line x1="22" y1="14" x2="22" y2="54" />
+          <line x1="42" y1="14" x2="42" y2="54" />
+          <rect
+            x="26"
+            y="29"
+            width="12"
+            height="8"
+            rx="1"
+            fill="currentColor"
+            opacity="0.2"
+          />
+          <rect
+            x="10"
+            y="17"
+            width="8"
+            height="6"
+            rx="1"
+            fill="currentColor"
+            opacity="0.3"
+          />
         </svg>
       }
     </div>
     <div class="status-chip" [class]="project.status">
-      {{ project.status === 'completed' ? '✅ Completed' : '🚧 In Progress' }}
+      {{ project.status === "completed" ? "✅ Completed" : "🚧 In Progress" }}
     </div>
   </div>
 
-  <!-- Content -->
+  <!-- content -->
   <div class="card-body">
     <div class="card-meta">
-      <span class="category-tag" [style.color]="project.color" [style.background]="project.color + '18'">
+      <span
+        class="category-tag"
+        [style.color]="project.color"
+        [style.background]="project.color + '18'"
+      >
         {{ project.category }}
       </span>
       <span class="year">{{ project.year }}</span>
@@ -65,21 +84,36 @@
     </div>
   </div>
 
-  <!-- Actions -->
+  <!-- actions -->
   <div class="card-footer">
-    <a [routerLink]="['/projects', project.slug]"
-       class="btn btn-primary view-btn"
-       (click)="onViewDetails()">
+    <a
+      [routerLink]="['/projects', project.slug]"
+      class="btn btn-primary view-btn"
+      (click)="onViewDetails()"
+    >
       View Details
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="5" y1="12" x2="19" y2="12"/>
-        <polyline points="12 5 19 12 12 19"/>
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <line x1="5" y1="12" x2="19" y2="12" />
+        <polyline points="12 5 19 12 12 19" />
       </svg>
     </a>
     @if (project.githubUrl) {
-      <a [href]="project.githubUrl" target="_blank" rel="noopener" class="icon-btn" aria-label="GitHub">
+      <a
+        [href]="project.githubUrl"
+        target="_blank"
+        rel="noopener"
+        class="icon-btn"
+        aria-label="GitHub"
+      >
         <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+          <path
+            d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+          />
         </svg>
       </a>
     }

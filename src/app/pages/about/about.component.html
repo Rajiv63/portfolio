@@ -31,7 +31,7 @@
         <div class="highlights-grid">
           @for (h of highlights; track h.label) {
             <div class="highlight-card">
-              <span class="h-icon">{{ h.icon }}</span>
+              <span class="material-symbols-outlined h-icon">{{ h.icon }}</span>
               <div>
                 <div class="h-value">{{ h.value }}</div>
                 <div class="h-label">{{ h.label }}</div>
@@ -46,16 +46,7 @@
             download
             class="btn btn-primary"
           >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <polyline points="7 10 12 15 17 10" />
-              <line x1="12" y1="15" x2="12" y2="3" />
-            </svg>
+            <span class="material-symbols-outlined">download</span>
             Download Resume
           </a>
           <a routerLink="/contact" class="btn btn-outline">Contact Me</a>
@@ -109,7 +100,6 @@
           <p>
             I've developed three substantial projects — a
             <strong>College ERP (Campus Vidyalaya)</strong>, an
-            <strong>Online No Dues System</strong>, and a
             <strong>Seat Allocation Management System</strong> — all built with
             Angular Standalone Components, Reactive Forms, and clean SCSS
             architecture. These projects solve real institutional problems.

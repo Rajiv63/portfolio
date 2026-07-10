@@ -13,7 +13,7 @@ import { FirebaseService } from '../../services/firebase.service';
 })
 export class SkillsComponent implements OnInit {
   categories: SkillCategory[] = [];
-  tools = ['Figma', 'Postman', 'Jupyter Notebook', 'Firebase', 'Netlify', 'Vercel', 'Linux', 'Agile/Scrum', 'REST APIs', 'JSON', 'ESLint', 'Prettier'];
+  tools = [ 'Postman', 'Jupyter Notebook', 'Firebase', 'Netlify', 'Vercel',  'REST APIs',  'Prettier'];
 
   constructor(private portfolio: PortfolioService, private firebase: FirebaseService) {}
   ngOnInit() {

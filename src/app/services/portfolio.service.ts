@@ -13,7 +13,14 @@ export class PortfolioService {
         subtitle: 'College ERP Platform',
         description: 'A comprehensive Enterprise Resource Planning platform for educational institutions, streamlining academic and administrative operations.',
         longDescription: 'Campus Vidyalaya is a full-featured College ERP system designed to digitize and streamline all campus operations. From student enrollment and fee management to attendance tracking and result processing, the platform serves students, faculty, and administrators through a single unified interface.',
-        tech: ['Angular', 'TypeScript', 'Bootstrap', 'SCSS', 'REST API', 'RxJS', 'Node.js'],
+
+        tech: [
+          'Angular',
+          'TypeScript',
+          'Bootstrap',
+          'SCSS',
+        ],
+
         features: [
           'Student enrollment & profile management',
           'Fee collection & payment tracking',
@@ -24,61 +31,80 @@ export class PortfolioService {
           'Library management module',
           'Responsive design for all devices'
         ],
+
         challenges: [
           'Designing a role-based access control system for students, faculty, and admins',
           'Building real-time attendance tracking with offline support',
           'Optimizing performance for large datasets of student records',
           'Creating an intuitive UX that works for non-technical users'
         ],
+
         outcomes: [
           'Reduced administrative workload by ~60%',
           'Enabled paperless fee & attendance processes',
           'Improved data accuracy and reporting',
           'Positive feedback from 500+ test users'
         ],
+
         githubUrl: 'https://github.com/Rajiv63',
+        liveUrl: 'https://campus-vidyalaya-798w.vercel.app/login',
+
         image: 'assets/images/campus-vidyalaya.svg',
         category: 'Web Application',
         status: 'completed',
         year: '2024',
         color: '#1a56db'
       },
+
       {
         id: '2',
-        slug: 'online-no-dues',
-        title: 'Online No Dues System',
-        subtitle: 'Digital Clearance Platform',
-        description: 'A digital clearance platform replacing paper-based no-dues processes with a streamlined multi-department approval workflow.',
-        longDescription: 'The Online No Dues System transforms the traditionally cumbersome paper-based clearance process into a seamless digital workflow. Students submit clearance requests that are routed automatically through relevant departments, with real-time tracking and notifications at every step.',
-        tech: ['Angular', 'TypeScript', 'SCSS', 'RxJS', 'Angular Forms', 'Bootstrap', 'REST API'],
+        slug: 'vastra-daan',
+        title: 'Vastra Daan',
+        subtitle: 'Clothes Donation Platform',
+        description: 'A web platform that connects donors with NGOs and people in need, making clothing donation simple, transparent, and accessible.',
+        longDescription: 'Vastra Daan is a donation platform where users can donate unused clothes, schedule pickups, and help NGOs distribute them to people in need. The platform provides a user-friendly interface for managing donations and tracking requests while encouraging sustainable clothing reuse.',
+
+        tech: [
+          'Angular',
+          'TypeScript',
+          'SCSS',
+          'Bootstrap',
+          'Firebase',
+          'REST API'
+        ],
+
         features: [
-          'Student clearance request submission',
-          'Multi-department parallel approval workflow',
-          'Real-time status tracking dashboard',
-          'Email & in-app notifications',
-          'Department-wise pending requests view',
-          'Digital certificate generation',
-          'Admin override & escalation handling',
-          'Audit trail for all approvals'
+          'User registration and login',
+          'Clothes donation request form',
+          'NGO and volunteer management',
+          'Donation tracking',
+          'Pickup scheduling',
+          'Responsive user interface',
+          'Admin dashboard',
+          'Real-time status updates'
         ],
+
         challenges: [
-          'Designing a flexible multi-step approval workflow engine',
-          'Ensuring concurrent department processing without conflicts',
-          'Building a reliable notification system',
-          'Handling edge cases in partial approvals and rejections'
+          'Managing donation workflows efficiently',
+          'Designing an intuitive user experience',
+          'Implementing real-time data synchronization',
+          'Ensuring secure user authentication'
         ],
+
         outcomes: [
-          'Eliminated physical visits for clearance process',
-          'Reduced average clearance time from 7 days to 2 hours',
-          '100% audit trail for compliance',
-          'Adopted by 3 departments in pilot run'
+          'Simplified the clothes donation process',
+          'Improved communication between donors and NGOs',
+          'Promoted sustainable clothing reuse',
+          'Responsive across desktop and mobile devices'
         ],
+
         githubUrl: 'https://github.com/Rajiv63',
-        image: 'assets/images/no-dues.svg',
+        liveUrl: 'https://vastra-daan.vercel.app/',
+        image: 'assets/images/vastra-daan.png',
         category: 'Web Application',
         status: 'completed',
         year: '2024',
-        color: '#0ea5e9'
+        color: '#22c55e'
       },
       {
         id: '3',
@@ -87,7 +113,16 @@ export class PortfolioService {
         subtitle: 'Exam Seat Management',
         description: 'An intelligent seat allocation management system for organizing examination halls with automated seating chart generation.',
         longDescription: 'The Seat Allocation Management System automates the complex task of assigning seats for university examinations. The system considers room capacities, student roll numbers, branch distributions, and special requirements to generate optimized seating arrangements instantly.',
-        tech: ['Angular', 'TypeScript', 'Python', 'Algorithm Design', 'SCSS', 'Bootstrap', 'REST API'],
+
+        tech: [
+          'Angular',
+          'TypeScript',
+          'Algorithm Design',
+          'SCSS',
+          'Firebase',
+          'REST API'
+        ],
+
         features: [
           'Automated seat allocation algorithm',
           'Room capacity management',
@@ -98,19 +133,24 @@ export class PortfolioService {
           'Bulk import from Excel/CSV',
           'Multi-exam session scheduling'
         ],
+
         challenges: [
           'Implementing a constraint-satisfaction algorithm for optimal seating',
           'Handling special cases (differently-abled students, late enrollments)',
           'Generating print-ready PDFs for large-scale exams',
           'Performance optimization for 5000+ students simultaneously'
         ],
+
         outcomes: [
           'Reduced seat allocation time from 8 hours to 5 minutes',
           'Zero seating conflicts in exam sessions',
           'Successfully deployed for university-level exams',
           'Saved significant administrative resources'
         ],
+
         githubUrl: 'https://github.com/Rajiv63',
+        liveUrl: 'https://seating-plan-portal.vercel.app/',
+
         image: 'assets/images/seat-allocation.svg',
         category: 'Management System',
         status: 'completed',
@@ -129,37 +169,59 @@ export class PortfolioService {
       {
         id: 1,
         role: 'Front-End Developer Intern',
-        company: 'IoTechWorld Avigation',
-        duration: '6 months',
-        startDate: 'Jan 2024',
-        endDate: 'Jun 2024',
+        company: 'IoTechWorld Avigation Pvt. Ltd.',
+        duration: '3 months',
+        startDate: 'Jun 2025',
+        endDate: 'Aug 2025',
         type: 'internship',
+
         description: [
-          'Developed and maintained responsive Angular web applications for IoT dashboard interfaces',
-          'Collaborated with backend team to integrate REST APIs for real-time device data visualization',
-          'Implemented reusable component library with Angular Standalone Components & SCSS',
-          'Optimized application performance through lazy loading and code splitting strategies',
-          'Participated in Agile sprints, code reviews, and daily standups'
+          'Worked in the Research & Development (R&D) Department, focusing on front-end development.',
+          'Developed a responsive Login Functionality page using HTML, CSS, and JavaScript.',
+          'Integrated a secure authentication workflow for user login and access control.',
+          'Collaborated with the development team to improve UI functionality and user experience.',
+          'Managed and maintained project repositories using GitHub for version control and collaboration.'
         ],
-        tech: ['Angular', 'TypeScript', 'SCSS', 'RxJS', 'Bootstrap', 'REST API', 'Git'],
+
+        tech: [
+          'HTML5',
+          'CSS3',
+          'JavaScript',
+          'Git',
+          'GitHub',
+          'Authentication',
+          'Responsive Design'
+        ],
+
         color: '#1a56db'
       },
       {
         id: 2,
         role: 'Data Science Intern',
         company: 'YBI Foundation',
-        duration: '3 months',
-        startDate: 'Aug 2023',
-        endDate: 'Oct 2023',
+        duration: '1.5 months',
+        startDate: '20 Mar 2024',
+        endDate: '03 May 2024',
         type: 'internship',
+
         description: [
-          'Performed data cleaning, preprocessing, and exploratory data analysis on real-world datasets',
-          'Built and evaluated machine learning models using Python (Scikit-learn, Pandas, NumPy)',
-          'Created data visualizations and dashboards using Matplotlib and Seaborn',
-          'Documented model performance metrics and prepared technical reports',
-          'Gained practical exposure to supervised learning algorithms'
+          'Performed data cleaning, preprocessing, and exploratory data analysis (EDA) on real-world datasets.',
+          'Built and evaluated machine learning models using Python, Pandas, NumPy, and Scikit-learn.',
+          'Created insightful data visualizations using Matplotlib and Seaborn.',
+          'Analyzed model performance and documented results with technical reports.',
+          'Gained hands-on experience with supervised machine learning algorithms and data analysis workflows.'
         ],
-        tech: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'Matplotlib', 'Seaborn', 'Jupyter'],
+
+        tech: [
+          'Python',
+          'Pandas',
+          'NumPy',
+          'Scikit-learn',
+          'Matplotlib',
+          'Seaborn',
+          'Jupyter Notebook'
+        ],
+
         color: '#0ea5e9'
       }
     ];
@@ -169,7 +231,7 @@ export class PortfolioService {
     return [
       {
         name: 'Frontend',
-        icon: '🎨',
+        icon: 'palette',
         skills: [
           { name: 'Angular', category: 'Frontend', level: 90, icon: 'angular', color: '#DD0031' },
           { name: 'TypeScript', category: 'Frontend', level: 88, icon: 'ts', color: '#3178C6' },
@@ -181,17 +243,17 @@ export class PortfolioService {
       },
       {
         name: 'Backend & Languages',
-        icon: '⚙️',
+        icon: 'settings',
         skills: [
-          { name: 'Python', category: 'Backend', level: 80, icon: 'python', color: '#3776AB' },
+          // { name: 'Python', category: 'Backend', level: 80, icon: 'python', color: '#3776AB' },
           { name: 'C++', category: 'Backend', level: 75, icon: 'cpp', color: '#00599C' },
           { name: 'REST APIs', category: 'Backend', level: 78, icon: 'api', color: '#25D366' },
-          { name: 'RxJS', category: 'Backend', level: 80, icon: 'rxjs', color: '#B7178C' }
+          // { name: 'RxJS', category: 'Backend', level: 80, icon: 'rxjs', color: '#B7178C' }
         ]
       },
       {
         name: 'Tools & DevOps',
-        icon: '🛠️',
+        icon: 'build',
         skills: [
           { name: 'Git', category: 'Tools', level: 85, icon: 'git', color: '#F05032' },
           { name: 'GitHub', category: 'Tools', level: 85, icon: 'github', color: '#181717' },
@@ -199,75 +261,106 @@ export class PortfolioService {
           { name: 'npm', category: 'Tools', level: 82, icon: 'npm', color: '#CB3837' }
         ]
       },
-      {
-        name: 'Data Science & CS',
-        icon: '🤖',
-        skills: [
-          { name: 'Machine Learning', category: 'DS', level: 70, icon: 'ml', color: '#FF6F00' },
-          { name: 'Pandas / NumPy', category: 'DS', level: 75, icon: 'pandas', color: '#150458' },
-          { name: 'Data Structures', category: 'CS', level: 82, icon: 'ds', color: '#1a56db' },
-          { name: 'Algorithms', category: 'CS', level: 80, icon: 'algo', color: '#0ea5e9' }
-        ]
-      }
+
     ];
   }
 
   getCertifications(): Certification[] {
-    return [
-      {
-        id: 1,
-        title: 'Angular - The Complete Guide',
-        issuer: 'Udemy',
-        date: '2024',
-        skills: ['Angular', 'TypeScript', 'RxJS', 'NgRx'],
-        color: '#1a56db',
-        icon: '🅰️'
-      },
-      {
-        id: 2,
-        title: 'Data Science with Python',
-        issuer: 'YBI Foundation',
-        date: '2023',
-        skills: ['Python', 'Pandas', 'Machine Learning', 'Scikit-learn'],
-        color: '#0ea5e9',
-        icon: '🐍'
-      },
-      {
-        id: 3,
-        title: 'Front-End Web Development',
-        issuer: 'freeCodeCamp',
-        date: '2023',
-        skills: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
-        color: '#7c3aed',
-        icon: '🌐'
-      },
-      {
-        id: 4,
-        title: 'Git & GitHub Fundamentals',
-        issuer: 'Coursera',
-        date: '2023',
-        skills: ['Git', 'GitHub', 'Version Control', 'Collaboration'],
-        color: '#e05d44',
-        icon: '📦'
-      },
-      {
-        id: 5,
-        title: 'TypeScript Fundamentals',
-        issuer: 'Microsoft Learn',
-        date: '2024',
-        skills: ['TypeScript', 'Type System', 'Generics', 'Decorators'],
-        color: '#3178C6',
-        icon: '📘'
-      },
-      {
-        id: 6,
-        title: 'Data Structures & Algorithms',
-        issuer: 'Coding Ninjas',
-        date: '2022',
-        skills: ['Arrays', 'Trees', 'Graphs', 'Dynamic Programming'],
-        color: '#f59e0b',
-        icon: '🧮'
-      }
+  return [
+    {
+      id: 1,
+      title: 'Data Science with Python',
+      issuer: 'YBI Foundation',
+      date: '2024',
+      skills: [
+        'Python',
+        'Pandas',
+        'NumPy',
+        'Scikit-learn',
+        'Machine Learning'
+      ],
+      color: '#0ea5e9',
+      icon: 'insights'
+    },
+
+    {
+      id: 2,
+      title: 'Front-End Web Development',
+      issuer: 'Apna College ',
+      date: '2024',
+      skills: [
+        'HTML5',
+        'CSS3',
+        'JavaScript',
+        'Responsive Design'
+      ],
+      color: '#7c3aed',
+      icon: 'public'
+    },
+
+    {
+      id: 3,
+      title: 'Git & GitHub Fundamentals',
+      issuer: 'Apna College',
+      date: '2024',
+      skills: [
+        'Git',
+        'GitHub',
+        'Version Control',
+        'Collaboration'
+      ],
+      color: '#e05d44',
+      icon: 'account_tree'
+    },
+
+    {
+      id: 4,
+      title: 'Angular Front-End Development',
+      issuer: 'Self Learning & Project Based',
+      date: '2025',
+      skills: [
+        'Angular',
+        'TypeScript',
+        'SCSS',
+         'Bootstrap'
+      ],
+      color: '#dd0031',
+      icon: 'code'
+    },
+
+    {
+      id: 5,
+      title: 'Front-End Developer Internship',
+      issuer: 'IoTechWorld Avigation Pvt. Ltd.',
+      date: '2025',
+      skills: [
+        'HTML',
+        'CSS',
+        'JavaScript',
+        'Authentication',
+        'GitHub'
+      ],
+      color: '#2563eb',
+      icon: 'work'
+    }
+      // {
+      //   id: 4,
+      //   title: 'TypeScript Fundamentals',
+      //   issuer: 'Microsoft Learn',
+      //   date: '2024',
+      //   skills: ['TypeScript', 'Type System', 'Generics', 'Decorators'],
+      //   color: '#3178C6',
+      //   icon: '📘'
+      // },
+      // {
+      //   id: 5,
+      //   title: 'Data Structures & Algorithms',
+      //   issuer: 'Coding Ninjas',
+      //   date: '2022',
+      //   skills: ['Arrays', 'Trees', 'Graphs', 'Dynamic Programming'],
+      //   color: '#f59e0b',
+      //   icon: '🧮'
+      // }
     ];
   }
 }

@@ -1,5 +1,12 @@
 .form-wrapper { max-width: 680px; margin: 0 auto; }
 
+// base sizing for all google material icons used in this form
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+  line-height: 1;
+}
+
 .result-state {
   text-align: center; padding: 64px 32px;
   background: var(--bg-card); border-radius: var(--radius-lg);
@@ -9,6 +16,8 @@
   p { color: var(--text-secondary); margin-bottom: 24px; }
   display: flex; flex-direction: column; align-items: center; gap: 12px;
 }
+.result-state.success .result-icon { color: #16a34a; }
+.result-state.error .result-icon { color: #ef4444; }
 
 form { display: flex; flex-direction: column; gap: 20px; }
 
@@ -23,7 +32,7 @@ form { display: flex; flex-direction: column; gap: 20px; }
     display: flex; align-items: center; gap: 8px;
     font-family: var(--font-display); font-size: 0.85rem;
     font-weight: 600; color: var(--text-primary);
-    svg { width: 14px; height: 14px; color: var(--primary); }
+    .material-symbols-outlined { font-size: 16px; color: var(--primary); }
   }
 
   input, select, textarea {
@@ -56,6 +65,7 @@ form { display: flex; flex-direction: column; gap: 20px; }
 
 .submit-btn {
   align-self: flex-start; padding: 14px 32px; font-size: 0.95rem;
+  .material-symbols-outlined { font-size: 18px; }
   @media (max-width: 600px) { align-self: stretch; justify-content: center; }
   &:disabled { opacity: 0.7; cursor: not-allowed; transform: none !important; }
 }

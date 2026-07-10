@@ -9,5 +9,5 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent {
-  techTags = ['Angular', 'TypeScript', 'SCSS', 'RxJS', 'Bootstrap'];
+  techTags = ['Angular', 'TypeScript', 'SCSS', 'Bootstrap'];
 }
