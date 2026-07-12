@@ -14,7 +14,6 @@
   &.scrolled {
     background: rgba(255, 255, 255, 0.95);
     border-bottom-color: var(--border);
-    box-shadow: var(--shadow-sm);
   }
 }
 
@@ -35,22 +34,24 @@
   flex-shrink: 0;
 
   &:hover .logo-mark {
-    transform: rotate(-5deg) scale(1.05);
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 var(--primary);
   }
 }
 
+// solid mark + small hard shadow, echoes the profile-photo signature from the hero
 .logo-mark {
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  border-radius: var(--radius-sm);
+  width: 38px;
+  height: 38px;
+  background: var(--text-primary);
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 0.9rem;
-  color: white;
+  font-family: monospace;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--white);
   transition: var(--transition-spring);
   flex-shrink: 0;
 }
@@ -70,10 +71,11 @@
 }
 
 .logo-role {
+  font-family: monospace;
   font-size: 0.7rem;
   color: var(--text-muted);
   font-weight: 400;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.01em;
 }
 
 // Nav Links
@@ -85,9 +87,9 @@
   justify-content: center;
 }
 
+// underline indicator instead of a rounded pill background
 .nav-link {
   padding: 8px 14px;
-  border-radius: var(--radius-sm);
   font-family: var(--font-display);
   font-weight: 500;
   font-size: 0.88rem;
@@ -95,15 +97,34 @@
   transition: var(--transition);
   position: relative;
 
+  &::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 2px;
+    height: 2px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: var(--transition);
+  }
+
   &:hover {
     color: var(--primary);
-    background: var(--primary-light);
+
+    &::after {
+      transform: scaleX(1);
+    }
   }
 
   &.active {
     color: var(--primary);
-    background: var(--primary-light);
     font-weight: 600;
+
+    &::after {
+      transform: scaleX(1);
+    }
   }
 }
 
@@ -114,6 +135,7 @@
   .btn {
     padding: 10px 20px;
     font-size: 0.85rem;
+    border-radius: 6px;
   }
 }
 
@@ -123,7 +145,7 @@
   flex-direction: column;
   gap: 5px;
   padding: 8px;
-  border-radius: var(--radius-sm);
+  border-radius: 6px;
   cursor: pointer;
   transition: var(--transition);
 
@@ -164,7 +186,6 @@
   right: 0;
   background: var(--white);
   border-bottom: 1px solid var(--border);
-  box-shadow: var(--shadow-md);
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -183,7 +204,7 @@
   a {
     display: block;
     padding: 12px 16px;
-    border-radius: var(--radius-sm);
+    border-left: 2px solid transparent;
     font-family: var(--font-display);
     font-weight: 500;
     color: var(--text-secondary);
@@ -191,6 +212,7 @@
 
     &:hover, &.active {
       color: var(--primary);
+      border-left-color: var(--primary);
       background: var(--primary-light);
     }
   }
@@ -203,6 +225,7 @@
     .btn {
       width: 100%;
       justify-content: center;
+      border-radius: 6px;
     }
   }
 }

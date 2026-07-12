@@ -13,6 +13,7 @@ import { FirebaseService } from '../../services/firebase.service';
 export class ProjectCardComponent {
   @Input() project!: Project;
   @Input() delay = 0;
+  @Input() index = 0;
 
   constructor(private firebase: FirebaseService) {}
 

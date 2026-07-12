@@ -1,0 +1,57 @@
+.projects-section {
+  background: #0b0d10;
+  padding: 80px 24px 40px;
+}
+
+.section-header {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 60px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: color-mix(in srgb, #5b8cff 18%, transparent);
+  color: #5b8cff;
+  margin-bottom: 20px;
+}
+
+.eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #5b8cff;
+}
+
+h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #f4f5f7;
+  margin: 0 0 12px;
+}
+
+.section-header p {
+  font-size: 1rem;
+  color: #a3a9b3;
+  margin: 0;
+}
+
+// this is the piece that makes the sticky-stack effect work —
+// a normal block-flow container with no overflow on itself or its ancestors
+.stack-stage {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  padding-bottom: 30vh;
+}

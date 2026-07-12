@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  padding: 80px 0 60px;
+  padding: 100px 0 60px;
 }
 
 .hero-bg {
@@ -14,48 +14,19 @@
   z-index: 0;
 }
 
-.bg-gradient {
+// flat, single-tone background — no gradient blobs, no dot grid
+.bg-base {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #f0f5ff 0%, #e8f0fe 50%, #e0f2fe 100%);
-}
-
-.bg-dots {
-  position: absolute;
-  inset: 0;
-  opacity: 0.5;
-}
-
-.bg-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.25;
-
-  &.blob-1 {
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, var(--primary), transparent);
-    top: -200px;
-    right: -100px;
-    animation: float 8s ease-in-out infinite;
-  }
-
-  &.blob-2 {
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, var(--accent), transparent);
-    bottom: -100px;
-    left: -100px;
-    animation: float 10s ease-in-out infinite reverse;
-  }
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
 }
 
 .hero-grid {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.1fr 0.9fr;
   gap: 80px;
   align-items: center;
 
@@ -66,37 +37,22 @@
   }
 }
 
+// monospace "code comment" eyebrow instead of pill + pulsing dot
 .hero-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-family: var(--font-display);
+  gap: 8px;
+  font-family: monospace;
   font-size: 0.85rem;
-  font-weight: 600;
-  color: #16a34a;
-  background: #dcfce7;
-  padding: 8px 16px;
-  border-radius: var(--radius-full);
+  font-weight: 500;
+  color: var(--text-muted);
   margin-bottom: 24px;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.01em;
 }
 
-.status-dot {
-  width: 8px;
-  height: 8px;
-  background: #16a34a;
-  border-radius: 50%;
-  position: relative;
-  flex-shrink: 0;
-
-  &::after {
-    content: '';
-    position: absolute;
-    inset: -3px;
-    border: 2px solid #16a34a;
-    border-radius: 50%;
-    animation: pulse-ring 2s infinite;
-  }
+.eyebrow-bracket {
+  color: var(--primary);
+  font-weight: 700;
 }
 
 .hero-name {
@@ -108,11 +64,9 @@
   margin-bottom: 16px;
 }
 
+// solid brand color, no gradient text-fill
 .name-highlight {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary);
 }
 
 .hero-role {
@@ -125,6 +79,20 @@
   font-weight: 600;
   color: var(--text-secondary);
   letter-spacing: -0.01em;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    background: var(--primary);
+    margin-right: 12px;
+    vertical-align: middle;
+
+    @media (max-width: 960px) {
+      display: none;
+    }
+  }
 }
 
 .hero-description {
@@ -156,21 +124,21 @@
   }
 }
 
+// sharp corners + monospace, not rounded-full pills
 .tech-tag {
-  padding: 6px 14px;
-  background: var(--white);
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius-full);
-  font-family: var(--font-display);
-  font-size: 0.8rem;
-  font-weight: 600;
+  padding: 6px 12px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
   color: var(--text-secondary);
   transition: var(--transition);
 
   &:hover {
     border-color: var(--primary);
     color: var(--primary);
-    background: var(--primary-light);
   }
 }
 
@@ -193,7 +161,7 @@
   background: transparent;
   color: var(--text-secondary);
   border: 1.5px solid var(--border);
-  border-radius: var(--radius-full);
+  border-radius: 6px;
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 0.9rem;
@@ -209,14 +177,13 @@
   &:hover {
     border-color: var(--primary);
     color: var(--primary);
-    background: var(--primary-light);
-    transform: translateY(-2px);
   }
 }
 
 .hero-social {
   display: flex;
   gap: 12px;
+  margin-bottom: 28px;
 
   @media (max-width: 960px) {
     justify-content: center;
@@ -227,15 +194,15 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 18px;
-  background: var(--white);
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius-full);
+  padding: 10px 16px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
   font-family: var(--font-display);
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--text-secondary);
-  transition: var(--transition-spring);
+  transition: var(--transition);
   text-decoration: none;
 
   svg {
@@ -246,10 +213,29 @@
   &:hover {
     border-color: var(--primary);
     color: var(--primary);
-    background: var(--primary-light);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
   }
+}
+
+// inline meta line — replaces the old boxed, centered stats card
+.hero-meta {
+  font-family: monospace;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  max-width: 520px;
+
+  @media (max-width: 960px) {
+    justify-content: center;
+    margin: 0 auto;
+  }
+}
+
+.meta-sep {
+  color: var(--border-strong);
 }
 
 .hero-visual {
@@ -265,200 +251,47 @@
 
 .profile-container {
   position: relative;
-  width: 360px;
-  height: 360px;
+  width: 320px;
 
   @media (max-width: 480px) {
-    width: 280px;
-    height: 280px;
+    width: 260px;
   }
 }
 
-.profile-ring {
-  position: absolute;
-  border-radius: 50%;
-  border: 2px dashed;
-
-  &.ring-outer {
-    inset: -24px;
-    border-color: rgba(26, 86, 219, 0.15);
-    animation: spin-slow 20s linear infinite;
-  }
-
-  &.ring-inner {
-    inset: -8px;
-    border-color: rgba(26, 86, 219, 0.25);
-    animation: spin-slow 14s linear infinite reverse;
-  }
-}
-
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
+// square-ish frame with a hard offset shadow — the one deliberate signature element
 .profile-image {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary-light), #e0f2fe);
-  border: 3px solid var(--white);
-  box-shadow: var(--shadow-lg);
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.1;
+  border-radius: 12px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: var(--text-primary);
+  box-shadow: 10px 10px 0 var(--primary);
 }
 
 .profile-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top; // photo was cropping forehead, adjusted top
+  object-position: center top;
 }
 
-.float-badge {
+// small tag pinned to the corner, replaces the four floating badges
+.profile-tag {
   position: absolute;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 10px 14px;
-  font-family: var(--font-display);
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  box-shadow: var(--shadow-md);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  white-space: nowrap;
-  animation: float 6s ease-in-out infinite;
-
-  &.badge-angular {
-    top: -8px;
-    left: -40px;
-    animation-delay: 0s;
-    color: #DD0031;
-  }
-
-  &.badge-ts {
-    top: 40px;
-    right: -48px;
-    animation-delay: 1s;
-    color: #3178C6;
-  }
-
-  &.badge-exp {
-    bottom: 60px;
-    right: -56px;
-    animation-delay: 2s;
-    color: var(--primary);
-  }
-
-  &.badge-proj {
-    bottom: -8px;
-    left: -32px;
-    animation-delay: 0.5s;
-    color: #7c3aed;
-  }
-
-  // hiding on small screens, was overlapping the photo badly
-  @media (max-width: 600px) {
-    display: none;
-  }
-}
-
-.edu-badge {
-  position: absolute;
-  bottom: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  border-radius: var(--radius-md);
-  padding: 12px 20px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  white-space: nowrap;
-  box-shadow: 0 8px 24px rgba(26, 86, 219, 0.4);
-}
-
-.edu-icon {
-  font-size: 1.5rem;
-}
-
-.edu-title {
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  font-weight: 700;
+  bottom: -16px;
+  left: -16px;
+  background: var(--text-primary);
   color: var(--white);
-}
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
 
-.edu-sub {
-  font-size: 0.72rem;
-  color: rgba(255,255,255,0.75);
-}
-
-// TODO: revisit this spacing, feels a bit too much on smaller laptops
-.hero-stats {
-  position: relative;
-  z-index: 1;
-  margin-top: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  padding: 32px 48px;
-  box-shadow: var(--shadow-card);
-  max-width: 640px;
-  margin-left: auto;
-  margin-right: auto;
-
-  @media (max-width: 600px) {
-    flex-wrap: wrap;
-    padding: 24px;
-    gap: 20px;
-
-    .stat-divider { display: none; }
+  @media (max-width: 480px) {
+    left: 0;
   }
-}
-
-.stat {
-  flex: 1;
-  text-align: center;
-  padding: 0 24px;
-
-  @media (max-width: 600px) {
-    flex: 1 1 40%;
-    padding: 0 16px;
-  }
-}
-
-.stat-number {
-  font-family: var(--font-display);
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: var(--primary);
-  line-height: 1;
-  margin-bottom: 6px;
-  letter-spacing: -0.03em;
-}
-
-.stat-label {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  font-weight: 500;
-  letter-spacing: 0.02em;
-}
-
-.stat-divider {
-  width: 1px;
-  height: 48px;
-  background: var(--border);
-  flex-shrink: 0;
 }
 
 .scroll-indicator {

@@ -7,18 +7,31 @@
     <div class="section-header animate-fade-up">
       <span class="section-eyebrow">Portfolio</span>
       <h2>Featured Projects</h2>
-      <p>Real-world applications built with Angular & modern web technologies</p>
+      <p>
+        Real-world applications built with Angular & modern web technologies
+      </p>
     </div>
-    <div class="projects-grid">
+    <div class="stack-stage">
       @for (project of projects; track project.id; let i = $index) {
-        <app-project-card [project]="project" [delay]="i * 120"></app-project-card>
+        <app-project-card
+          [project]="project"
+          [index]="i"
+          [delay]="i * 120"
+          [style.z-index]="i + 1"
+        ></app-project-card>
       }
     </div>
     <div class="view-all">
       <a routerLink="/projects" class="btn btn-outline">
         View All Projects
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <polyline points="12 5 19 12 12 19" />
         </svg>
       </a>
     </div>
@@ -41,8 +54,14 @@
     <div class="view-all">
       <a routerLink="/skills" class="btn btn-outline">
         View All Skills
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <polyline points="12 5 19 12 12 19" />
         </svg>
       </a>
     </div>
@@ -54,13 +73,23 @@
   <div class="container">
     <div class="cta-content animate-fade-up">
       <h2>Let's Build Something Great Together</h2>
-      <p>Open to internships, full-time roles, and freelance Angular projects</p>
+      <p>Open to internships, full-time roles, and Angular projects</p>
       <div class="cta-actions">
         <a routerLink="/contact" class="btn btn-primary">Get In Touch</a>
-        <a href="assets/resume/Rajiv_Shukla_Resume.pdf" download class="btn btn-ghost">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-            <polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+        <a
+          href="assets/resume/Rajiv_Shukla_Resume.pdf"
+          download
+          class="btn btn-ghost"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
           </svg>
           Download Resume
         </a>

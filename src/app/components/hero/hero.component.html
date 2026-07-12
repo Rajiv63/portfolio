@@ -1,10 +1,7 @@
 <section class="hero">
-  <!-- bg stuff -->
+  <!-- flat bg, no blur blobs / dot grid -->
   <div class="hero-bg">
-    <div class="bg-gradient"></div>
-    <div class="bg-dots dot-grid"></div>
-    <div class="bg-blob blob-1"></div>
-    <div class="bg-blob blob-2"></div>
+    <div class="bg-base"></div>
   </div>
 
   <div class="container">
@@ -12,8 +9,7 @@
       <!-- left side -->
       <div class="hero-content">
         <div class="hero-eyebrow animate-fade-up delay-1">
-          <span class="status-dot"></span>
-          Available for Opportunities
+          <!-- <span class="eyebrow-bracket"></span> currently available -->
         </div>
 
         <h1 class="hero-name animate-fade-up delay-2">
@@ -110,13 +106,20 @@
             LinkedIn
           </a>
         </div>
+
+        <!-- meta line replaces the old centered stats card -->
+        <div class="hero-meta animate-fade-up delay-8">
+          <span>3+ projects</span>
+          <span class="meta-sep">·</span>
+          <span>2 internships</span>
+          <span class="meta-sep">·</span>
+          <span>Angular · TypeScript · SCSS</span>
+        </div>
       </div>
 
-      <!-- profile pic + floating badges -->
+      <!-- profile pic, no rings, hard offset shadow instead -->
       <div class="hero-visual animate-scale-in delay-3">
         <div class="profile-container">
-          <div class="profile-ring ring-outer"></div>
-          <div class="profile-ring ring-inner"></div>
           <div class="profile-image">
             <img
               src="assets/images/rajiv-profile.png"
@@ -124,25 +127,8 @@
               class="profile-photo"
             />
           </div>
+          <div class="profile-tag">Angular Dev</div>
         </div>
-      </div>
-    </div>
-
-    <!-- stats -->
-    <div class="hero-stats animate-fade-up delay-8">
-      <div class="stat">
-        <div class="stat-number">3+</div>
-        <div class="stat-label">Projects Built</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat">
-        <div class="stat-number">2</div>
-        <div class="stat-label">Internships</div>
-      </div>
-      <div class="stat-divider"></div>
-      <div class="stat">
-        <div class="stat-number">3+</div>
-        <div class="stat-label">Tech Skills</div>
       </div>
     </div>
   </div>

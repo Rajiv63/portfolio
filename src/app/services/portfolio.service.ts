@@ -246,8 +246,8 @@ export class PortfolioService {
         icon: 'settings',
         skills: [
           // { name: 'Python', category: 'Backend', level: 80, icon: 'python', color: '#3776AB' },
-          { name: 'C++', category: 'Backend', level: 75, icon: 'cpp', color: '#00599C' },
-          { name: 'REST APIs', category: 'Backend', level: 78, icon: 'api', color: '#25D366' },
+          { name: 'MySQL', category: 'Backend', level: 50, icon: 'mysql', color: '#00599C' },
+          { name: 'REST APIs', category: 'Backend', level: 50, icon: 'api', color: '#25D366' },
           // { name: 'RxJS', category: 'Backend', level: 80, icon: 'rxjs', color: '#B7178C' }
         ]
       },

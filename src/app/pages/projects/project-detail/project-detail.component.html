@@ -1,11 +1,6 @@
 @if (project) {
   <!-- hero banner -->
-  <section
-    class="detail-hero"
-    [style.background]="
-      'linear-gradient(135deg,' + project.color + '18 0%, #f0f5ff 100%)'
-    "
-  >
+  <section class="detail-hero" [style.background]="project.color + '0a'">
     <div class="container">
       <div class="breadcrumb animate-fade-up">
         <a routerLink="/">Home</a>
@@ -33,8 +28,8 @@
         <div class="hero-left animate-fade-up">
           <div
             class="project-badge"
+            [style.border-color]="project.color"
             [style.color]="project.color"
-            [style.background]="project.color + '18'"
           >
             {{ project.category }}
           </div>
@@ -56,9 +51,8 @@
               {{ project.year }}
             </span>
             <span class="meta-chip status" [class]="project.status">
-              {{
-                project.status === "completed" ? " Completed" : " In Progress"
-              }}
+              <span class="status-dot"></span>
+              {{ project.status === "completed" ? "Completed" : "In Progress" }}
             </span>
           </div>
 
@@ -119,7 +113,7 @@
 
         <!-- illustration -->
         <div class="hero-visual animate-scale-in delay-2">
-          <div class="visual-card" [style.border-color]="project.color + '40'">
+          <div class="visual-card" [style.border-color]="project.color">
             <div class="visual-icon" [style.color]="project.color">
               @if (project.slug === "campus-vidyalaya") {
                 <svg
@@ -199,29 +193,16 @@
         <!-- left: details -->
         <div class="detail-main">
           <div class="detail-block animate-fade-up">
-            <h2>
-              <span class="block-icon"></span>
-              Project Overview
-            </h2>
+            <h2>Project Overview</h2>
             <p>{{ project.longDescription }}</p>
           </div>
 
           <div class="detail-block animate-fade-up delay-1">
-            <h2>
-              <span class="block-icon"></span>
-              Key Features
-            </h2>
+            <h2>Key Features</h2>
             <ul class="feature-list">
               @for (f of project.features; track $index) {
                 <li>
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                  >
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
+                  <span class="feature-marker"></span>
                   {{ f }}
                 </li>
               }
@@ -229,16 +210,11 @@
           </div>
 
           <div class="detail-block animate-fade-up delay-2">
-            <h2>
-              <span class="block-icon"></span>
-              Challenges & Solutions
-            </h2>
+            <h2>Challenges &amp; Solutions</h2>
             <div class="challenges-grid">
               @for (c of project.challenges; track $index; let i = $index) {
                 <div class="challenge-card">
-                  <div class="challenge-num" [style.color]="project.color">
-                    0{{ i + 1 }}
-                  </div>
+                  <div class="challenge-num">0{{ i + 1 }}</div>
                   <p>{{ c }}</p>
                 </div>
               }
@@ -246,16 +222,10 @@
           </div>
 
           <div class="detail-block animate-fade-up delay-3">
-            <h2>
-              <span class="block-icon"></span>
-              Outcomes & Impact
-            </h2>
+            <h2>Outcomes &amp; Impact</h2>
             <div class="outcomes-grid">
               @for (o of project.outcomes; track $index) {
-                <div
-                  class="outcome-chip"
-                  [style.border-color]="project.color + '40'"
-                >
+                <div class="outcome-chip">
                   <span
                     class="outcome-dot"
                     [style.background]="project.color"
@@ -270,44 +240,16 @@
         <!-- right: sidebar -->
         <aside class="detail-sidebar">
           <div class="sidebar-card animate-fade-up delay-1">
-            <h3>
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <polyline points="16 18 22 12 16 6" />
-                <polyline points="8 6 2 12 8 18" />
-              </svg>
-              Tech Stack
-            </h3>
+            <h3>Tech Stack</h3>
             <div class="tech-tags">
               @for (t of project.tech; track t) {
-                <span
-                  class="tag"
-                  [style.border-color]="project.color + '50'"
-                  [style.color]="project.color"
-                  >{{ t }}</span
-                >
+                <span class="tag">{{ t }}</span>
               }
             </div>
           </div>
 
           <div class="sidebar-card animate-fade-up delay-2">
-            <h3>
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <line x1="12" y1="8" x2="12" y2="12" />
-                <line x1="12" y1="16" x2="12.01" y2="16" />
-              </svg>
-              Project Info
-            </h3>
+            <h3>Project Info</h3>
             <div class="info-list">
               <div class="info-row">
                 <span>Year</span><strong>{{ project.year }}</strong>
@@ -318,7 +260,7 @@
               <div class="info-row">
                 <span>Status</span>
                 <strong [class]="project.status">{{
-                  project.status === "completed" ? " Completed" : " In Progress"
+                  project.status === "completed" ? "Completed" : "In Progress"
                 }}</strong>
               </div>
               <div class="info-row">
@@ -328,22 +270,7 @@
           </div>
 
           <div class="sidebar-card animate-fade-up delay-3">
-            <h3>
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
-                />
-                <path
-                  d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
-                />
-              </svg>
-              Links
-            </h3>
+            <h3>Links</h3>
             @if (project.githubUrl) {
               <a
                 [href]="project.githubUrl"
@@ -393,14 +320,14 @@
             <a
               [routerLink]="['/projects', p.slug]"
               class="other-card"
-              [style.border-top-color]="p.color"
+              [style.border-left-color]="p.color"
             >
               <span class="other-category" [style.color]="p.color">{{
                 p.category
               }}</span>
               <h4>{{ p.title }}</h4>
               <p>{{ p.subtitle }}</p>
-              <span class="other-arrow"> View → </span>
+              <span class="other-arrow">View details </span>
             </a>
           }
         </div>

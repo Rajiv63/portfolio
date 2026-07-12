@@ -13,14 +13,12 @@
       <!-- Left: Avatar + Highlights -->
       <div class="about-left animate-fade-up">
         <div class="avatar-block">
-          <div class="avatar-ring">
-            <div class="avatar-img">
-              <img
-                src="assets/images/rajiv-profile.png"
-                alt="Rajiv Shukla"
-                class="avatar-photo"
-              />
-            </div>
+          <div class="avatar-frame">
+            <img
+              src="assets/images/rajiv-profile.png"
+              alt="Rajiv Shukla"
+              class="avatar-photo"
+            />
           </div>
           <div class="name-block">
             <h2>Rajiv Shukla</h2>
@@ -29,9 +27,62 @@
         </div>
 
         <div class="highlights-grid">
-          @for (h of highlights; track h.label) {
+          @for (h of highlights; track h.label; let i = $index) {
             <div class="highlight-card">
-              <span class="material-symbols-outlined h-icon">{{ h.icon }}</span>
+              <div class="h-icon">
+                @switch (i) {
+                  @case (0) {
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M22 10L12 5 2 10l10 5 10-5z" />
+                      <path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5" />
+                    </svg>
+                  }
+                  @case (1) {
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M9 11l3 3L22 4" />
+                      <path
+                        d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"
+                      />
+                    </svg>
+                  }
+                  @case (2) {
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <rect x="3" y="3" width="7" height="7" rx="1" />
+                      <rect x="14" y="3" width="7" height="7" rx="1" />
+                      <rect x="3" y="14" width="7" height="7" rx="1" />
+                      <rect x="14" y="14" width="7" height="7" rx="1" />
+                    </svg>
+                  }
+                  @case (3) {
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"
+                      />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                  }
+                }
+              </div>
               <div>
                 <div class="h-value">{{ h.value }}</div>
                 <div class="h-label">{{ h.label }}</div>
@@ -46,7 +97,16 @@
             download
             class="btn btn-primary"
           >
-            <span class="material-symbols-outlined">download</span>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
             Download Resume
           </a>
           <a routerLink="/contact" class="btn btn-outline">Contact Me</a>

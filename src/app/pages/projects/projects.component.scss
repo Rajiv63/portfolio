@@ -1,23 +1,33 @@
 .page-top { padding-bottom: 0; }
-.projects-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
-  @media (max-width: 1024px) { grid-template-columns: repeat(2, 1fr); }
-  @media (max-width: 640px) { grid-template-columns: 1fr; }
+
+// wraps the sticky-stacking cards; the extra bottom padding is what gives the
+// last card room to fully reveal before the section ends
+.stack-stage {
+  position: relative;
+  max-width: 780px;
+  margin: 0 auto;
+  padding-bottom: 30vh;
 }
+
 .github-cta { margin-top: 64px; }
+
 .github-card {
   display: flex; align-items: center; gap: 28px;
-  background: var(--text-primary); border-radius: var(--radius-lg);
+  background: var(--text-primary); border-radius: 10px;
   padding: 36px 40px; flex-wrap: wrap;
   @media (max-width: 640px) { flex-direction: column; text-align: center; padding: 28px; }
 }
+
 .github-icon {
-  width: 56px; height: 56px; background: rgba(255,255,255,0.1);
-  border-radius: var(--radius-md); display: flex; align-items: center;
+  width: 52px; height: 52px; background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px; display: flex; align-items: center;
   justify-content: center; flex-shrink: 0;
-  svg { width: 28px; height: 28px; color: white; }
+  svg { width: 24px; height: 24px; color: white; }
 }
+
 h3 { font-size: 1.15rem; font-weight: 700; color: white; margin-bottom: 4px; }
-p { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+p { font-family: monospace; font-size: 0.85rem; color: rgba(255,255,255,0.55); }
 div { flex: 1; }
-.btn-primary { flex-shrink: 0; white-space: nowrap; }
+
+.btn-primary { flex-shrink: 0; white-space: nowrap; border-radius: 6px; }

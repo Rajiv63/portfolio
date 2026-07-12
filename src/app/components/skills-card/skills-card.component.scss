@@ -1,28 +1,55 @@
 .skills-card {
   padding: 32px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
   animation: fadeInUp 0.7s cubic-bezier(0.4,0,0.2,1) both;
 }
+
 .card-header {
   display: flex; align-items: center; gap: 14px;
   margin-bottom: 28px; padding-bottom: 20px;
   border-bottom: 1px solid var(--border);
 }
+
+// solid square mark, no Material Symbols font, no tinted-bubble background
 .category-icon {
-  font-size: 1.5rem; width: 48px; height: 48px;
-  background: var(--primary-light); border-radius: var(--radius-sm);
+  width: 40px; height: 40px;
+  background: var(--text-primary);
+  border-radius: 8px;
   display: flex; align-items: center; justify-content: center;
+  color: var(--white);
+  flex-shrink: 0;
+
+  svg { width: 19px; height: 19px; }
 }
-h3 { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); }
+
+h3 { font-size: 1.05rem; font-weight: 700; color: var(--text-primary); letter-spacing: -0.01em; }
+
 .skills-list { display: flex; flex-direction: column; gap: 18px; }
-.skill-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+
+.skill-meta { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+
 .skill-name { font-family: var(--font-display); font-size: 0.9rem; font-weight: 600; color: var(--text-primary); }
+
+// plain monospace figure, no pill background
 .skill-level {
-  font-family: var(--font-display); font-size: 0.78rem; font-weight: 700;
-  color: var(--text-muted); background: var(--bg-section);
-  padding: 2px 8px; border-radius: var(--radius-full);
+  font-family: monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
 }
-.skill-bar { height: 6px; background: var(--bg-section); border-radius: var(--radius-full); overflow: hidden; }
+
+// flat single-tone track, sharp ends — no rounded-full rainbow bar
+.skill-bar {
+  height: 4px;
+  background: var(--bg-section);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
 .skill-fill {
-  height: 100%; border-radius: var(--radius-full);
+  height: 100%;
+  border-radius: 2px;
   transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
 }

@@ -1,19 +1,43 @@
 .page-top { padding-bottom: 0; }
+
 .skills-grid {
   display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px;
   @media (max-width: 768px) { grid-template-columns: 1fr; }
 }
+
+// flat bordered shell, no drop shadow
 .tools-banner {
-  margin-top: 48px; padding: 36px; background: var(--bg-card);
-  border: 1px solid var(--border); border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-card);
-  h3 { font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 20px; }
+  margin-top: 48px; padding: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  h3 {
+    font-family: monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    text-transform: none;
+  }
 }
-.tools-row { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.tools-row { display: flex; flex-wrap: wrap; gap: 8px; }
+
+// sharp monospace outline chip — same family as .tech-chip / .tag used across the site
 .tool-chip {
-  padding: 8px 18px; background: var(--bg-section); border: 1.5px solid var(--border);
-  border-radius: var(--radius-full); font-family: var(--font-display);
-  font-size: 0.85rem; font-weight: 600; color: var(--text-secondary);
+  padding: 5px 12px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-secondary);
   transition: var(--transition);
-  &:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-light); }
+
+  &:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
 }
