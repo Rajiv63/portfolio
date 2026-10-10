@@ -246,6 +246,69 @@ export const PROJECTS_DATA: Project[] = [
     status: 'completed',
     year: '2025',
     color: '#f59e0b'
+  },
+  {
+    id: '5',
+    slug: 'sangeet',
+    title: 'Sangeet',
+    subtitle: 'Music Streaming & Discovery Web App',
+    description: 'A Spotify-grade, full-stack music streaming platform engineered with seamless endless playback and interactive audio personalization.',
+    longDescription: 'Sangeet is a modern full-stack music streaming web application delivering an ad-free, high-fidelity listening experience. Built with React 19, Tailwind CSS, Express, and MongoDB, it features continuous genre-matched autoplay, real-time audio controls, Spotify-inspired vinyl aesthetics, and an interactive musical persona studio. Designed for zero-latency audio delivery, the platform combines isolated 60fps seekbar performance, rich regional curation, and instant global search.',
+    tech: [
+      'React 19',
+      'Tailwind CSS v4',
+      'Node.js',
+      'Express 5',
+      'MongoDB',
+      'Mongoose',
+      'Vite',
+      'React Router v7',
+      'JWT Auth',
+      'Bcrypt.js',
+      'HTML5 Audio API',
+      'Context API',
+      'Axios',
+      'Cheerio',
+      'Vercel'
+    ],
+    features: [
+      'Continuous Endless Autoplay: Dynamic queue engine injects related and unplayed tracks without audio delay when playlists finish',
+      'Spotify-Grade UI/UX & Micro-interactions: Glassmorphic dark aesthetic, ambient glowing hero spotlight, vinyl disc animations, and live equalizer badges',
+      'Performance-Optimized Playback Engine: Isolated audio progress rendering ensuring 60fps seekbar updates even under heavy catalog loads',
+      'Unified Context Action Menu: Dual-mode context actions — floating right-click / 3-dots dropdown on desktop and native bottom action sheet on mobile',
+      'Interactive Persona Studio: In-app avatar generator with random seed generation, customizable musical styles, and streaming audio preferences',
+      'Global Instant Catalog Search: Zero-latency catalog filtering with Ctrl + K / Cmd + K keyboard shortcut navigation',
+      'Curated Spotlight & Regional Collections: Curated 20-track collections across Bollywood, Punjabi, Haryanvi, and Smart Yearly Hits with automatic total duration calculation',
+      'Full-Stack Audio Architecture: RESTful Express 5 APIs backed by MongoDB & Mongoose with JWT authentication and Bcrypt password hashing'
+    ],
+    responsibilities: [
+      'Architected the full-stack system using React 19, Vite, Express 5, and MongoDB',
+      'Engineered continuous endless autoplay logic with dynamic queue injection and audio state management',
+      'Designed the Spotify-inspired dark aesthetic featuring spinning vinyl disc animations and equalizer badges',
+      'Optimized playback seekbar rendering to maintain a consistent 60fps UI performance during playback',
+      'Built cross-platform responsive context action sheets and desktop dropdown menus',
+      'Implemented the interactive Musical Persona Studio and customized equalizer preference storage',
+      'Integrated keyboard-driven Ctrl+K instant search and curated regional music catalogs'
+    ],
+    challenges: [
+      'Decoupling high-frequency audio playback time updates from the React state tree to avoid frame drops across large track lists',
+      'Implementing seamless endless queue injection that queries and appends genre-matched tracks before current track completion',
+      'Architecting a unified context action sheet supporting touch gestures on mobile and floating popovers on desktop',
+      'Managing audio buffering states, stream recovery, and Cross-Origin Resource Sharing (CORS) across diverse media endpoints'
+    ],
+    outcomes: [
+      'Delivered a frictionless, ad-free music listening experience with instant catalog navigation',
+      'Achieved butter-smooth 60fps seekbar updates and lag-free vinyl micro-animations',
+      'Organized multi-genre regional collections with instant duration calculation and dynamic search',
+      'Created an immersive user persona and audio customization studio praised for high visual fidelity'
+    ],
+    githubUrl: 'https://github.com/Rajiv63',
+    image: 'assets/images/sangeet.svg',
+    category: 'Music Streaming Platform',
+    status: 'completed',
+    year: '2025',
+    color: '#1db954',
+    role: 'Full-Stack Developer'
   }
 ];
 
