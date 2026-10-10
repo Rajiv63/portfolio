@@ -303,6 +303,7 @@ export const PROJECTS_DATA: Project[] = [
       'Created an immersive user persona and audio customization studio praised for high visual fidelity'
     ],
     githubUrl: 'https://github.com/Rajiv63',
+    liveUrl: 'https://sangeet-live.vercel.app/',
     image: 'assets/images/sangeet.svg',
     category: 'Music Streaming Platform',
     status: 'completed',
