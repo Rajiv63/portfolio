@@ -78,44 +78,63 @@ export const PROJECTS_DATA: Project[] = [
   {
     id: '2',
     slug: 'vastra-daan',
-    title: 'Vastra Daan',
-    subtitle: 'Clothes Donation Platform',
-    description: 'A web platform that connects donors with NGOs and people in need, making clothing donation simple, transparent, and accessible.',
-    longDescription: 'Vastra Daan is a donation platform where users can donate unused clothes, schedule pickups, and help NGOs distribute them to people in need. The platform provides a user-friendly interface for managing donations and tracking requests while encouraging sustainable clothing reuse.',
+    title: 'VastraDaan',
+    subtitle: 'Clothing Donation Management Platform',
+    description: 'A web-based clothing donation platform that connects donors with verified NGOs to simplify clothing reuse, pickup coordination, and donation tracking.',
+    longDescription: 'VastraDaan bridges the gap between individuals wishing to donate surplus, gently-used clothes and underprivileged communities by creating a seamless digital bridge to verified NGOs. Donors can easily submit donation details (category, quantity, garment condition, pickup or drop-off preference), explore partner NGOs, monitor donation milestones, and review their history. An authorized, route-guarded admin panel empowers administrators to review incoming donations, manage partner NGOs, coordinate donor records, and track community impact in real time.',
     tech: [
       'Angular',
       'TypeScript',
+      'HTML5',
       'SCSS',
-      'Bootstrap',
-      'Firebase',
-      'REST API'
+      'Angular Router',
+      'Reactive Forms',
+      'Firebase Auth',
+      'Firebase Database',
+      'Signals',
+      'Route Guards',
+      'Responsive Web Design'
     ],
     features: [
-      'User registration and login',
-      'Clothes donation request form',
-      'NGO and volunteer management',
-      'Donation tracking',
-      'Pickup scheduling',
-      'Responsive user interface',
-      'Admin dashboard',
-      'Real-time status updates'
+      'Clothing donation submission form (category, quantity, condition, pickup/drop-off preference)',
+      'Verified NGO directory listing with organizational details',
+      'Personalized donor dashboard with donation history and tracking',
+      'Administrative dashboard for donation, donor, and NGO management',
+      'Protected admin portal with Firebase Authentication and Angular route guards',
+      'Real-time donation status updates and tracking milestones',
+      'Contact message review and inquiry management for administrators',
+      'Dedicated public pages (Mission, About Us, Team, and Contact)',
+      'Fully responsive UI optimized for mobile, tablet, and desktop devices'
+    ],
+    role: 'Frontend Developer',
+    responsibilities: [
+      'Architected the Angular application structure with standalone component architecture',
+      'Developed reusable standalone components and shared navigation structures',
+      'Implemented intuitive clothing donation form with reactive validations and condition selectors',
+      'Built verified NGO listing screens and interactive donor status dashboard',
+      'Developed protected administrative management panel for overseeing donations and NGOs',
+      'Configured Angular Router with lazy-loaded routes and secure route guards',
+      'Integrated Firebase Authentication and cloud data services',
+      'Engineered clean, responsive layouts using SCSS and mobile-first design principles',
+      'Handled form validation, error handling, loading states, and user interaction feedback',
+      'Conducted frontend testing, state optimization, and cross-browser debugging'
     ],
     challenges: [
-      'Managing donation workflows efficiently',
-      'Designing an intuitive user experience',
-      'Implementing real-time data synchronization',
-      'Ensuring secure user authentication'
+      'Designing an accessible, multi-attribute donation form that minimizes submission drop-offs',
+      'Securing administrative workflows using Firebase Authentication paired with Angular route guards',
+      'Synchronizing real-time status transitions between donor submissions and admin controls',
+      'Ensuring fluid responsiveness and high performance on mobile devices with standalone components'
     ],
     outcomes: [
-      'Simplified the clothes donation process',
-      'Improved communication between donors and NGOs',
-      'Promoted sustainable clothing reuse',
-      'Responsive across desktop and mobile devices'
+      'Established a centralized, transparent platform connecting donors with verified NGOs',
+      'Simplified the clothing donation process with clear pickup and drop-off coordination',
+      'Enabled NGOs to efficiently track incoming donations and fulfill clothing requirements',
+      'Delivered a 100% responsive, user-friendly interface with sub-second navigation'
     ],
     githubUrl: 'https://github.com/Rajiv63',
     liveUrl: 'https://vastra-daan.vercel.app/',
     image: 'assets/images/vastra-daan.png',
-    category: 'Web Application',
+    category: 'Social Impact Platform',
     status: 'completed',
     year: '2024',
     color: '#22c55e'
