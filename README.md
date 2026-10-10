@@ -1,152 +1,152 @@
-# Rajiv Shukla — Angular Portfolio
+# Rajiv Shukla — Developer Portfolio
 
-A modern, premium developer portfolio built with **Angular 19 Standalone Components**, Firebase Analytics & Firestore, lazy-loaded routing, and SCSS.
+The source code for Rajiv Shukla's responsive developer portfolio. The site is built with Angular 19 standalone components and presents projects, skills, experience, certifications, and a contact form in a fast, route-based interface.
 
----
+## Features
 
-## 🚀 Tech Stack
+- Lazy-loaded Angular routes for each portfolio section
+- Responsive layouts with SCSS and shared design tokens
+- Centralized, typed portfolio data for projects, experience, skills, and certifications
+- Project detail pages addressed by slug
+- Reactive contact form with validation
+- Firebase Analytics event tracking
+- Firestore storage for contact form submissions
+- Firebase Hosting and Vercel deployment configuration
 
-| Layer | Technology |
-|-------|-----------|
-| Framework | Angular 19 (Standalone Components) |
+## Tech stack
+
+| Area | Technology |
+| --- | --- |
+| Framework | Angular 19 |
 | Language | TypeScript 5.6 |
-| Styles | SCSS with CSS Custom Properties |
-| Routing | Angular Router + Lazy Loading |
+| Styling | SCSS and CSS custom properties |
 | Forms | Angular Reactive Forms |
-| Backend | Firebase (Analytics + Firestore) |
-| Hosting | Firebase Hosting |
+| Routing | Angular Router with lazy-loaded standalone components |
+| Backend services | Firebase Analytics and Cloud Firestore |
+| Package manager | npm |
 
----
+## Routes
 
-## 📁 Project Structure
+| Path | Description |
+| --- | --- |
+| `/` | Home and featured content |
+| `/about` | Profile and background |
+| `/skills` | Technical skills |
+| `/experience` | Work and learning experience |
+| `/projects` | Project collection |
+| `/projects/:slug` | Project detail page |
+| `/certifications` | Certifications |
+| `/contact` | Contact form |
 
-```
-src/
-├── app/
-│   ├── pages/
-│   │   ├── home/               # Landing page
-│   │   ├── about/              # Bio & profile
-│   │   ├── skills/             # Tech skills with progress bars
-│   │   ├── experience/         # Interactive timeline
-│   │   ├── projects/           # Project grid
-│   │   │   └── project-detail/ # Per-project deep-dive
-│   │   ├── certifications/     # Cert cards
-│   │   └── contact/            # Reactive form → Firestore
-│   ├── components/
-│   │   ├── navbar/             # Sticky, responsive navbar
-│   │   ├── footer/             # Links + social
-│   │   ├── hero/               # Animated hero section
-│   │   ├── skills-card/        # Animated progress bars
-│   │   ├── experience-timeline/# Accordion timeline
-│   │   ├── project-card/       # Project preview card
-│   │   └── contact-form/       # Reactive form with validation
-│   ├── services/
-│   │   ├── firebase.service.ts # Analytics + Firestore
-│   │   └── portfolio.service.ts# All portfolio data
-│   ├── models/
-│   │   └── portfolio.models.ts # TypeScript interfaces
-│   ├── app.routes.ts           # Lazy-loaded routes
-│   └── app.config.ts           # App providers
-├── assets/
-│   ├── images/
-│   └── resume/                 # Place resume PDF here
-└── styles.scss                 # Global design tokens + utilities
-```
+Unknown paths redirect to the home page.
 
----
+## Getting started
 
-## ⚡ Getting Started
+### Prerequisites
 
-### 1. Install dependencies
+- Node.js compatible with Angular 19
+- npm
+
+### Install and run
+
 ```bash
 npm install
-```
-
-### 2. Add your resume
-Place your resume PDF at:
-```
-src/assets/resume/Rajiv_Shukla_Resume.pdf
-```
-
-### 3. Run locally
-```bash
 npm start
-# → http://localhost:4200
 ```
 
-### 4. Production build
+Open <http://localhost:4200> after the development server starts.
+
+### Production build
+
 ```bash
 npm run build
 ```
 
----
+The production build is generated in `dist/rajiv-portfolio/browser`.
 
-## 🔥 Firebase Setup
+For an incremental development build, use:
 
-The project is already wired to your Firebase project `portfolio-website-c93fd`.
+```bash
+npm run watch
+```
 
-### Firebase features used:
-- **Analytics** — automatic page view + event tracking on every route
-- **Firestore** — contact form submissions saved to `contact_messages` collection
+## Project structure
 
-### Deploy to Firebase Hosting:
+```text
+src/
+├── app/
+│   ├── core/
+│   │   ├── data/                 # Portfolio content
+│   │   ├── models/               # Shared TypeScript models
+│   │   └── services/             # Portfolio and Firebase services
+│   ├── features/                 # Route-level standalone components
+│   │   ├── home/
+│   │   ├── about/
+│   │   ├── skills/
+│   │   ├── experience/
+│   │   ├── projects/
+│   │   ├── certifications/
+│   │   └── contact/
+│   ├── shared/                   # Reusable UI components
+│   ├── app.config.ts             # Application providers
+│   └── app.routes.ts             # Application routes
+├── assets/
+│   ├── images/
+│   └── resume/
+├── environments/                 # Firebase configuration
+└── styles.scss                   # Global styles and design tokens
+```
+
+## Customizing the portfolio
+
+1. Update projects, experience, skills, and certifications in [`src/app/core/data/portfolio.data.ts`](src/app/core/data/portfolio.data.ts).
+2. Update the shared TypeScript contracts in [`src/app/core/models/portfolio.models.ts`](src/app/core/models/portfolio.models.ts) if the data shape changes.
+3. Replace images in `src/assets/images/` and the resume in `src/assets/resume/`.
+4. Adjust colors, typography, spacing, and global utilities in [`src/styles.scss`](src/styles.scss).
+
+## Firebase
+
+Firebase is initialized from the environment files:
+
+- `src/environments/environment.ts` for production builds
+- `src/environments/environment.development.ts` for local development
+
+The application uses:
+
+- **Analytics** for page views, project views, resume downloads, and successful contact submissions.
+- **Firestore** to save contact submissions in the `contact_messages` collection with a server timestamp and `read: false` flag.
+
+The Firebase web configuration is not a secret, but Firestore security rules and Firebase project access must be configured in the Firebase Console before accepting production submissions.
+
+### Deploy to Firebase Hosting
+
+The repository's [`firebase.json`](firebase.json) is configured for the Angular browser output and SPA route fallback.
+
 ```bash
 npm install -g firebase-tools
 firebase login
 npm run build
 firebase deploy
-# → https://portfolio-website-c93fd.web.app
 ```
 
-### View contact messages:
-Go to [Firebase Console](https://console.firebase.google.com/project/portfolio-website-c93fd/firestore) → Firestore → `contact_messages`
+### Deploy to Vercel
 
----
+The included [`vercel.json`](vercel.json) rewrites all routes to `index.html`, which keeps Angular client-side routes working on refresh. Configure the repository as a Vercel project and use the following settings:
 
-## 📱 Responsive Breakpoints
-
-| Breakpoint | Width |
-|------------|-------|
-| Mobile | < 480px |
-| Tablet | 480px – 768px |
-| Laptop | 768px – 1024px |
-| Desktop | > 1024px |
-
----
-
-## 🎨 Design System
-
-All design tokens are in `src/styles.scss` as CSS custom properties:
-
-```scss
---primary: #1a56db       // Blue accent
---accent:  #0ea5e9       // Sky blue
---font-display: 'Syne'   // Headings
---font-body:    'DM Sans' // Body text
+```text
+Build command: npm run build
+Output directory: dist/rajiv-portfolio/browser
 ```
 
----
+## Available npm scripts
 
-## 🔧 Customization
-
-To update portfolio data (projects, experience, skills, certs), edit:
-```
-src/app/services/portfolio.service.ts
-```
-
-All data is centralized — no need to touch individual component files.
+| Command | Purpose |
+| --- | --- |
+| `npm start` | Start the Angular development server |
+| `npm run build` | Create a production build |
+| `npm run watch` | Rebuild continuously using the development configuration |
+| `npm run ng` | Run Angular CLI commands |
 
 ---
 
-## 📊 Analytics Events Tracked
-
-| Event | Trigger |
-|-------|---------|
-| `page_view` | Every route navigation |
-| `project_view` | Opening a project card |
-| `contact_form_submit` | Successful form send |
-| `resume_download` | Resume button click |
-
----
-
-**Built with ❤️ by Rajiv Shukla · B.Tech IT · GGSIPU · New Delhi**
+Built with Angular by Rajiv Shukla.
