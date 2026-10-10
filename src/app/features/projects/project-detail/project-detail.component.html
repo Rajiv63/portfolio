@@ -176,6 +176,21 @@
                   />
                 </svg>
               }
+              @if (project.slug === "academic-document-formatter") {
+                <svg
+                  viewBox="0 0 80 80"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.2"
+                >
+                  <path d="M20 8h28l12 12v52H20z" />
+                  <path d="M48 8v12h12" />
+                  <line x1="29" y1="36" x2="51" y2="36" />
+                  <line x1="29" y1="46" x2="51" y2="46" />
+                  <line x1="29" y1="56" x2="45" y2="56" />
+                  <path d="M55 58l4 4 9-10" />
+                </svg>
+              }
             </div>
             <div class="visual-label" [style.color]="project.color">
               {{ project.title }}

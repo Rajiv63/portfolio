@@ -184,6 +184,68 @@ export const PROJECTS_DATA: Project[] = [
     status: 'completed',
     year: '2023',
     color: '#7c3aed'
+  },
+  {
+    id: '4',
+    slug: 'academic-document-formatter',
+    title: 'Academic Document Formatter',
+    subtitle: 'Automated DOCX Formatting Platform',
+    description: 'A full-stack document-processing application that formats academic DOCX files according to university guidelines while preserving their original structure and content.',
+    longDescription: 'Academic Document Formatter helps students, researchers, and faculty transform unformatted academic documents into standardized, submission-ready files. Users can upload a DOCX document, choose a university template or custom formatting settings, preview the original and formatted versions, validate compliance, and download the final document. The application combines DOCX OpenXML processing with authentication, document versioning, and administrative management tools.',
+    tech: [
+      'React',
+      'Vite',
+      'Tailwind CSS',
+      'Material UI',
+      'React Router',
+      'Node.js',
+      'Express.js',
+      'MySQL',
+      'JWT',
+      'Multer',
+      'JSZip',
+      'Mammoth'
+    ],
+    features: [
+      'DOCX document upload with file type and size validation',
+      'University-style formatting templates and custom formatting settings',
+      'A4 page size with customizable margins, fonts, alignment, and line spacing',
+      'Chapter, heading, sub-heading, table, and figure caption formatting',
+      'Header, footer, and Roman or Arabic page numbering support',
+      'Original document and formatted document previews',
+      'Preservation of tables, images, hyperlinks, equations, and document structure',
+      'Formatting compliance validation report',
+      'Formatted document download and document version history',
+      'Student dashboard and admin panel for users, templates, and storage',
+      'JWT-based authentication with protected routes',
+      'API rate limiting and security headers'
+    ],
+    responsibilities: [
+      'Designed the full-stack architecture for document upload, formatting, validation, and version management',
+      'Built document-processing workflows around the DOCX OpenXML structure',
+      'Implemented formatting automation while preserving document content and embedded elements',
+      'Created authenticated student and admin workflows with role-based access control',
+      'Added upload validation, protected APIs, rate limiting, CORS, and security headers',
+      'Developed document previews, compliance reporting, and downloadable output flows'
+    ],
+    challenges: [
+      'Manipulating DOCX XML structures without losing tables, images, hyperlinks, equations, or document relationships',
+      'Applying consistent formatting rules across varied academic document structures',
+      'Managing large uploads safely while maintaining responsive processing feedback',
+      'Designing version management so users can compare and recover formatted document iterations'
+    ],
+    outcomes: [
+      'Reduced repetitive manual formatting work for academic documents',
+      'Standardized formatting against reusable university templates',
+      'Provided a traceable workflow with validation reports and document versions',
+      'Combined document automation with production-oriented authentication and upload security'
+    ],
+    liveUrl: 'https://academic-document-formatter.vercel.app/',
+    image: 'assets/images/academic-document-formatter.svg',
+    category: 'Document Processing Platform',
+    status: 'completed',
+    year: '2025',
+    color: '#f59e0b'
   }
 ];
 

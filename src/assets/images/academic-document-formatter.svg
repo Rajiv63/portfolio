@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Academic Document Formatter</title>
+  <desc id="desc">A document page with formatting and validation marks.</desc>
+  <rect width="640" height="360" rx="24" fill="#fff7ed"/>
+  <rect x="196" y="38" width="248" height="284" rx="10" fill="#ffffff" stroke="#f59e0b" stroke-width="8"/>
+  <path d="M382 38v58h62" fill="#fef3c7" stroke="#f59e0b" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M244 142h152M244 178h152M244 214h102" stroke="#64748b" stroke-width="12" stroke-linecap="round"/>
+  <path d="m364 260 16 16 36-42" fill="none" stroke="#16a34a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
