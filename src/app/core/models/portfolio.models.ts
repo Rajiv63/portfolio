@@ -16,6 +16,8 @@ export interface Project {
   status: 'completed' | 'in-progress';
   year: string;
   color: string;
+  role?: string;
+  responsibilities?: string[];
 }
 
 export interface Experience {

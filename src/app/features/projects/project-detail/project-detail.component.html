@@ -197,6 +197,20 @@
             <p>{{ project.longDescription }}</p>
           </div>
 
+          @if (project.responsibilities && project.responsibilities.length > 0) {
+            <div class="detail-block animate-fade-up delay-1">
+              <h2>My Role &amp; Responsibilities</h2>
+              <ul class="feature-list">
+                @for (r of project.responsibilities; track $index) {
+                  <li>
+                    <span class="feature-marker"></span>
+                    {{ r }}
+                  </li>
+                }
+              </ul>
+            </div>
+          }
+
           <div class="detail-block animate-fade-up delay-1">
             <h2>Key Features</h2>
             <ul class="feature-list">
@@ -264,7 +278,7 @@
                 }}</strong>
               </div>
               <div class="info-row">
-                <span>Role</span><strong>Full-Stack Frontend Dev</strong>
+                <span>Role</span><strong>{{ project.role || 'Full-Stack Frontend Dev' }}</strong>
               </div>
             </div>
           </div>
