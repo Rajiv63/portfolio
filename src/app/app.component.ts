@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent, FooterComponent } from '@shared';
+import { inject as injectAnalytics } from '@vercel/analytics';
 
 @Component({
   selector: 'app-root',
@@ -20,4 +21,11 @@ import { NavbarComponent, FooterComponent } from '@shared';
     }
   `]
 })
-export class AppComponent {}
+export class AppComponent {
+  constructor() {
+    // Initialize Vercel Analytics
+    if (typeof window !== 'undefined') {
+      injectAnalytics();
+    }
+  }
+}
