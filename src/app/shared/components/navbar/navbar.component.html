@@ -1,15 +1,6 @@
 <nav class="navbar" [class.scrolled]="isScrolled">
   <div class="container">
     <div class="navbar-inner">
-      <!-- Logo -->
-      <a routerLink="/" class="logo" (click)="closeMobileMenu()">
-        <div class="logo-text">
-          <span class="logo-name">Rajiv Shukla</span>
-          <span class="logo-role">Angular Developer</span>
-        </div>
-      </a>
-
-      <!-- Desktop Nav Links -->
       <ul class="nav-links desktop-only">
         @for (link of navLinks; track link.path) {
           <li>
@@ -25,12 +16,14 @@
         }
       </ul>
 
-      <!-- Mobile Hamburger -->
+      <a routerLink="/contact" class="nav-cta desktop-only">Let's talk <span>↗</span></a>
+
       <button
         class="hamburger mobile-only"
         [class.open]="isMobileMenuOpen"
         (click)="toggleMobileMenu()"
-        aria-label="Toggle menu"
+        [attr.aria-expanded]="isMobileMenuOpen"
+        aria-label="Toggle navigation menu"
       >
         <span></span>
         <span></span>
@@ -39,8 +32,11 @@
     </div>
   </div>
 
-  <!-- Mobile Menu -->
   <div class="mobile-menu" [class.open]="isMobileMenuOpen">
+    <div class="mobile-menu-head">
+      <span>Navigation</span>
+      <span>00 — 07</span>
+    </div>
     <ul>
       @for (link of navLinks; track link.path) {
         <li>
@@ -50,10 +46,13 @@
             [routerLinkActiveOptions]="{ exact: link.path === '/' }"
             (click)="closeMobileMenu()"
           >
-            {{ link.label }}
+            <span class="mobile-index">0{{ $index + 1 }}</span>
+            <span>{{ link.label }}</span>
+            <span class="mobile-arrow">↗</span>
           </a>
         </li>
       }
     </ul>
+    <a routerLink="/contact" class="mobile-cta" (click)="closeMobileMenu()">Start a conversation <span>↗</span></a>
   </div>
 </nav>

@@ -1,33 +1,150 @@
-.page-top { padding-bottom: 0; }
-
-// wraps the sticky-stacking cards; the extra bottom padding is what gives the
-// last card room to fully reveal before the section ends
-.stack-stage {
-  position: relative;
-  max-width: 780px;
-  margin: 0 auto;
-  padding-bottom: 30vh;
+.projects-intro {
+  padding: 150px 0 100px;
+  background: #10100f;
+  color: #f5f1e9;
 }
 
-.github-cta { margin-top: 64px; }
+.intro-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 70px;
+}
+
+.section-number {
+  display: block;
+  color: #d9774c;
+  font: 600 .68rem/1 var(--font-body);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.intro-note {
+  color: rgba(245, 241, 233, .45);
+  font-size: .72rem;
+  letter-spacing: .05em;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 12%;
+  align-items: end;
+}
+
+.intro-grid h1 {
+  margin: 0;
+  color: #f5f1e9;
+  font: 500 clamp(4rem, 9vw, 8rem)/.87 var(--font-display);
+  letter-spacing: -.08em;
+}
+
+.intro-grid h1 em,
+.projects-heading h2 em {
+  color: #d9774c;
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.intro-grid p {
+  max-width: 380px;
+  margin: 0 0 8px;
+  color: rgba(245, 241, 233, .6);
+  font-size: 1.1rem;
+  line-height: 1.75;
+}
+
+.projects-main {
+  padding: 110px 0 140px;
+  background: #f2eee6;
+}
+
+.projects-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 70px;
+}
+
+.projects-heading h2 {
+  margin: 0;
+  color: #171715;
+  font-size: clamp(2.8rem, 6vw, 5.3rem);
+  font-weight: 500;
+  line-height: .9;
+  letter-spacing: -.07em;
+}
+
+.projects-heading > p {
+  max-width: 260px;
+  margin: 0 0 8px;
+  color: #716b63;
+  font-size: .9rem;
+  line-height: 1.7;
+}
+
+.stack-stage {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 12vh;
+}
+
+.github-cta {
+  max-width: 900px;
+  margin: 0 auto;
+}
 
 .github-card {
-  display: flex; align-items: center; gap: 28px;
-  background: var(--text-primary); border-radius: 10px;
-  padding: 36px 40px; flex-wrap: wrap;
-  @media (max-width: 640px) { flex-direction: column; text-align: center; padding: 28px; }
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 32px;
+  border: 1px solid rgba(23, 23, 21, .16);
+  border-radius: 18px;
+  background: #fff;
 }
 
 .github-icon {
-  width: 52px; height: 52px; background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 8px; display: flex; align-items: center;
-  justify-content: center; flex-shrink: 0;
-  svg { width: 24px; height: 24px; color: white; }
+  display: flex;
+  width: 52px;
+  height: 52px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #171715;
+  color: #f5f1e9;
 }
 
-h3 { font-size: 1.15rem; font-weight: 700; color: white; margin-bottom: 4px; }
-p { font-family: monospace; font-size: 0.85rem; color: rgba(255,255,255,0.55); }
-div { flex: 1; }
+.github-icon svg { width: 24px; height: 24px; }
+.github-copy .section-number { margin-bottom: 10px; }
+.github-copy h3 { margin: 0 0 7px; color: #171715; font-size: 1.5rem; letter-spacing: -.04em; }
+.github-copy p { margin: 0; color: #716b63; font-size: .88rem; }
 
-.btn-primary { flex-shrink: 0; white-space: nowrap; border-radius: 6px; }
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 17px;
+  background: #d9774c;
+  color: #171715;
+  font: 700 .73rem/1 var(--font-body);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  transition: .3s ease;
+}
+
+.github-link span { font-size: 1rem; }
+.github-link:hover { transform: translateY(-2px); background: #171715; color: #f5f1e9; }
+
+@media (max-width: 760px) {
+  .projects-intro { padding: 120px 0 75px; }
+  .intro-top { flex-direction: column; gap: 18px; margin-bottom: 52px; }
+  .intro-grid { grid-template-columns: 1fr; gap: 36px; }
+  .intro-grid h1 { font-size: clamp(3.8rem, 17vw, 5rem); }
+  .projects-main { padding: 72px 0 90px; }
+  .projects-heading { display: block; margin-bottom: 48px; }
+  .projects-heading > p { margin-top: 24px; }
+  .github-card { grid-template-columns: 1fr; gap: 18px; }
+  .github-link { justify-content: space-between; }
+}

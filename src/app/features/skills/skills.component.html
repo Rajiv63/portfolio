@@ -1,24 +1,40 @@
-<section class="section section-alt page-top">
+<section class="skills-intro">
   <div class="container">
-    <div class="section-header animate-fade-up">
-      <span class="section-eyebrow">Tech Stack</span>
-      <h1>Skills & Technologies</h1>
-      <p>A comprehensive overview of the technologies, frameworks, and tools I work with</p>
+    <div class="intro-top">
+      <span class="section-number">Skills / 01</span>
+      <span class="intro-note">A focused stack for useful products</span>
+    </div>
+    <div class="intro-grid">
+      <h1>Tools for<br /><em>the craft.</em></h1>
+      <p>
+        I choose tools that help me move from a rough idea to a dependable,
+        polished experience without getting in the user's way.
+      </p>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="skills-main">
   <div class="container">
+    <div class="section-heading">
+      <div>
+        <span class="section-number">02 / Core capabilities</span>
+        <h2>Built to<br /><em>ship.</em></h2>
+      </div>
+      <p>Technologies, frameworks, and habits I bring into every project.</p>
+    </div>
+
     <div class="skills-grid">
       @for (cat of categories; track cat.name; let i = $index) {
         <app-skills-card [category]="cat" [delay]="i * 120"></app-skills-card>
       }
     </div>
 
-    <!-- Tools Banner -->
     <div class="tools-banner animate-fade-up">
-      <h3>Also Comfortable With</h3>
+      <div>
+        <span class="section-number">03 / Around the stack</span>
+        <h3>Also comfortable with</h3>
+      </div>
       <div class="tools-row">
         @for (tool of tools; track tool) {
           <span class="tool-chip">{{ tool }}</span>

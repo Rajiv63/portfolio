@@ -1,184 +1,196 @@
-// each card sticks at the same offset; a rising z-index (set per-card via [style.z-index])
-// makes every next card slide over and cover the one before it as you scroll
 .stack-card {
   position: sticky;
-  top: 96px;
+  top: 108px;
   min-height: 420px;
-  margin-bottom: 40px;
-  border-radius: 16px;
+  margin-bottom: 42px;
   padding: 44px;
-  background: var(--white);
-  border: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-  position: sticky;
-  // the shadow is functional here, not decorative — it's what sells the "cards stacked
-  // on top of each other" illusion as the next one slides over
-  box-shadow: 0 24px 48px -24px rgba(15, 23, 42, 0.18);
+  border: 1px solid rgba(255, 255, 255, .09);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 88% 18%, color-mix(in srgb, var(--card-color, #2563eb) 10%, transparent), transparent 25%),
+    #ffffff;
+  box-shadow: 0 28px 65px rgba(23, 23, 21, .16);
+  transition: transform .4s ease, border-color .4s ease, box-shadow .4s ease;
+}
 
-  @media (max-width: 768px) {
-    top: 84px;
-    min-height: auto;
-    padding: 28px;
-  }
+.stack-card:hover {
+  border-color: color-mix(in srgb, var(--card-color, #2563eb) 60%, white 10%);
+  box-shadow: 0 34px 78px rgba(23, 23, 21, .22);
+  transform: translateY(-4px);
 }
 
 .stack-card::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, var(--card-color, var(--primary)) 0%, transparent 55%);
-  opacity: 0.07;
+  inset: auto 0 0;
+  height: 45%;
+  background: linear-gradient(0deg, rgba(23, 23, 21, .05), transparent);
   pointer-events: none;
+}
+
+.stack-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 42%;
+  height: 2px;
+  background: var(--card-color, #2563eb);
+  box-shadow: 0 0 20px var(--card-color, #2563eb);
 }
 
 .stack-index {
   position: absolute;
-  top: 32px;
-  right: 40px;
-  font-family: monospace;
-  font-size: 4.5rem;
-  font-weight: 800;
-  color: var(--card-color, var(--primary));
-  opacity: 0.12;
-  line-height: 1;
+  top: 38px;
+  right: 42px;
+  color: var(--card-color, #2563eb);
+  opacity: .09;
+  font: 800 6rem/.8 var(--font-display);
+  letter-spacing: -.08em;
   pointer-events: none;
+}
 
-  @media (max-width: 768px) {
-    font-size: 3rem;
-    top: 20px;
-    right: 24px;
-  }
+.stack-meta, .stack-body, .stack-footer {
+  position: relative;
+  z-index: 1;
 }
 
 .stack-meta {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
-  position: relative;
-  z-index: 1;
 }
 
-// sharp outline tag, not the demo's rounded-full tinted pill — matches the rest of the site
 .category-tag {
-  font-family: monospace;
-  font-size: 0.72rem;
-  font-weight: 600;
-  padding: 4px 10px;
+  padding: 7px 13px;
   border: 1px solid;
-  border-radius: 4px;
+  border-radius: 999px;
+  font: 600 .65rem/1 var(--font-body);
+  letter-spacing: .12em;
+  text-transform: uppercase;
 }
 
 .status-chip {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-family: monospace;
-  font-size: 0.75rem;
-  color: var(--text-muted);
+  gap: 7px;
+  color: #77736d;
+  font: .7rem/1 var(--font-body);
+  letter-spacing: .04em;
 }
 
 .status-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--text-muted);
+  width: 7px;
+  height: 7px;
   flex-shrink: 0;
-
-  &.completed { background: #16a34a; }
-  &.in-progress { background: #f59e0b; }
+  border-radius: 50%;
 }
 
-.stack-body {
-  position: relative;
-  z-index: 1;
-}
+.status-dot.completed { background: #35d69a; box-shadow: 0 0 10px rgba(53, 214, 154, .7); }
+.status-dot.in-progress { background: #fbbf24; box-shadow: 0 0 10px rgba(251, 191, 36, .7); }
+
+.stack-body { margin: 70px 0 54px; max-width: 650px; }
 
 h3 {
-  font-size: 1.8rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  color: var(--text-primary);
-  margin: 20px 0 4px;
-
-  @media (max-width: 768px) { font-size: 1.4rem; }
+  margin: 0 0 10px;
+  color: #171715;
+  font: 800 clamp(2rem, 4vw, 3.2rem)/1 var(--font-display);
+  letter-spacing: -.055em;
 }
 
 .subtitle {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--card-color, var(--primary));
-  margin: 0 0 12px;
+  margin: 0 0 18px;
+  color: var(--card-color, #3b82f6);
+  font: 600 .95rem/1.3 var(--font-body);
+  letter-spacing: .02em;
 }
 
 .description {
-  font-size: 0.92rem;
-  color: var(--text-secondary);
-  line-height: 1.65;
-  max-width: 520px;
+  max-width: 580px;
+  color: #65615b;
+  font-size: .95rem;
+  line-height: 1.75;
 }
 
 .stack-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 18px;
   flex-wrap: wrap;
-  position: relative;
-  z-index: 1;
 }
 
 .tech-stack { display: flex; flex-wrap: wrap; gap: 8px; }
 
 .tech-chip {
-  font-family: monospace;
-  font-size: 0.72rem;
-  padding: 3px 8px;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  color: var(--text-secondary);
+  padding: 7px 11px;
+  border: 1px solid rgba(23, 23, 21, .12);
+  border-radius: 8px;
+  background: #f5f1e9;
+  color: #77736d;
+  font: .68rem/1 var(--font-body);
+}
 
-  &.more { color: var(--card-color, var(--primary)); border-color: var(--card-color, var(--primary)); }
+.tech-chip.more {
+  border-color: var(--card-color, #2563eb);
+  color: var(--card-color, #2563eb);
 }
 
 .footer-actions {
   display: flex;
   align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
+  gap: 9px;
 }
 
 .icon-btn {
-  width: 38px; height: 38px; border-radius: 6px;
-  border: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--text-secondary);
-  transition: var(--transition);
-
-  svg { width: 16px; height: 16px; }
-
-  &:hover { background: var(--text-primary); color: var(--white); border-color: var(--text-primary); }
+  display: flex;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(23, 23, 21, .14);
+  border-radius: 10px;
+  background: #f5f1e9;
+  color: #65615b;
+  transition: .3s ease;
 }
 
-// sharp corners, not the demo's full pill — the card's accent color still carries through as the fill
+.icon-btn svg { width: 17px; height: 17px; }
+.icon-btn:hover { border-color: #171715; color: #171715; transform: translateY(-2px); }
+
 .view-link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-weight: 700;
-  font-size: 0.88rem;
+  gap: 12px;
+  padding: 13px 19px;
+  border-radius: 10px;
+  background: var(--card-color, #2563eb);
   color: #fff;
-  background: var(--card-color, var(--primary));
-  padding: 10px 18px;
-  border-radius: 6px;
-  text-decoration: none;
-  flex-shrink: 0;
-  transition: filter var(--transition);
+  box-shadow: 0 8px 20px color-mix(in srgb, var(--card-color, #2563eb) 30%, transparent);
+  font: 700 .8rem/1 var(--font-body);
+  transition: filter .3s ease, transform .3s ease;
+}
 
-  svg { width: 15px; height: 15px; }
+.view-link svg { width: 15px; height: 15px; }
+.view-link:hover { filter: brightness(1.12); transform: translateY(-2px); }
 
-  &:hover { filter: brightness(0.92); }
+@media (max-width: 768px) {
+  .stack-card {
+    top: 84px;
+    min-height: 430px;
+    margin-bottom: 28px;
+    padding: 28px;
+  }
+
+  .stack-index { top: 28px; right: 28px; font-size: 4rem; }
+  .stack-body { margin: 58px 0 46px; }
+  h3 { font-size: 2rem; }
+  .stack-footer { align-items: flex-start; flex-direction: column; }
+  .footer-actions { width: 100%; }
+  .view-link { flex: 1; justify-content: center; }
 }

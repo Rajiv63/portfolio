@@ -1,114 +1,70 @@
-<!-- ===================== Page Header ===================== -->
-<section class="section section-alt page-top">
+<section class="contact-intro">
   <div class="container">
-    <div class="section-header animate-fade-up">
-      <span class="section-eyebrow">Say Hello</span>
-      <h1>Get In Touch</h1>
+    <div class="intro-top">
+      <span class="section-number">Contact / 01</span>
+      <span class="intro-note"><span></span> Usually replies within 24 hours</span>
+    </div>
+    <div class="intro-grid">
+      <h1>Let's make<br /><em>something.</em></h1>
       <p>
-        Open to internships, full-time roles, freelance work, and exciting
-        collaborations.
+        Have a role, a project, or an idea that needs a front-end mind? I would
+        love to hear what you're working on.
       </p>
     </div>
   </div>
 </section>
 
-<!-- ===================== Contact ===================== -->
-<section class="section">
+<section class="contact-main">
   <div class="container">
     <div class="contact-layout">
-      <!-- ===================== Left Side ===================== -->
       <div class="contact-info animate-fade-up">
         <div class="info-intro">
-          <h2>Let's Work Together</h2>
+          <span class="section-number">02 / Find me here</span>
+          <h2>Start with a hello.</h2>
           <p>
             Whether you have a job opportunity, an exciting project, or simply
-            want to connect, I'd love to hear from you. I typically respond
-            within 24 hours.
+            want to connect, send a note. I'm open to thoughtful conversations
+            and ambitious work.
           </p>
         </div>
 
-        <!-- Contact Cards -->
         <div class="contact-cards">
           @for (card of cards; track card.label) {
-            <a
-              [href]="card.link"
-              class="contact-card"
-              [class.no-link]="card.link === '#'"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span class="material-symbols-outlined card-icon">
-                {{ card.icon }}
-              </span>
-
+            <a [href]="card.link" class="contact-card" [class.no-link]="card.link === '#'" target="_blank" rel="noopener noreferrer">
+              <span class="material-symbols-outlined card-icon">{{ card.icon }}</span>
               <div class="card-content">
-                <div class="card-label">
-                  {{ card.label }}
-                </div>
-
-                <div class="card-value">
-                  {{ card.value }}
-                </div>
+                <span class="card-label">{{ card.label }}</span>
+                <span class="card-value">{{ card.value }}</span>
               </div>
-
               @if (card.link !== "#") {
-                <span class="material-symbols-outlined arrow">
-                  open_in_new
-                </span>
+                <span class="material-symbols-outlined arrow">north_east</span>
               }
             </a>
           }
         </div>
 
-        <!-- Resume -->
-        <div class="resume-promo">
-          <div class="resume-promo-inner">
-            <div class="promo-icon">
-              <span class="material-symbols-outlined"> description </span>
-            </div>
-
-            <div class="promo-content">
-              <h4>My Resume</h4>
-              <p>
-                Download my latest resume to know more about my skills,
-                experience and projects.
-              </p>
-            </div>
-
-            <a
-              href="assets/resume/Rajiv_Shukla_Resume.pdf"
-              download
-              class="btn btn-primary"
-            >
-              <span class="material-symbols-outlined"> download </span>
-
-              Download Resume
-            </a>
-          </div>
-        </div>
-
-        <!-- Availability -->
         <div class="availability-banner">
-          <span class="material-symbols-outlined avail-icon"> verified </span>
-
+          <span class="material-symbols-outlined avail-icon">verified</span>
           <div>
-            <strong>Currently Available</strong>
-
-            <p>Open to Full-Time Jobs, Internships and Freelance Projects.</p>
+            <strong>Currently available</strong>
+            <p>Open to full-time jobs, internships, and freelance projects.</p>
           </div>
         </div>
-      </div>
 
-      <!-- ===================== Right Side ===================== -->
+        <a href="assets/resume/Rajiv_Shukla_Resume.pdf" download class="resume-promo">
+          <span class="material-symbols-outlined">description</span>
+          <span>Download my resume</span>
+          <span class="resume-arrow">↓</span>
+        </a>
+      </div>
 
       <div class="contact-form-wrap animate-fade-up delay-2">
         <div class="form-card">
           <div class="form-card-header">
-            <h3>Send a Message</h3>
-
+            <span class="section-number">03 / Your message</span>
+            <h3>Tell me a little<br /><em>about it.</em></h3>
             <p>Powered by Firebase — your message goes directly to Rajiv.</p>
           </div>
-
           <app-contact-form></app-contact-form>
         </div>
       </div>

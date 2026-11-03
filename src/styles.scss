@@ -1,45 +1,54 @@
 // =============================================
 // GLOBAL STYLES - Rajiv Shukla Portfolio
+// DARK MODE PREMIUM REDESIGN
 // =============================================
 
 // CSS Custom Properties
 :root {
-  // Colors
-  --primary: #1a56db;
-  --primary-dark: #1340b0;
-  --primary-light: #e8f0fe;
-  --primary-glow: rgba(26, 86, 219, 0.15);
-  --accent: #0ea5e9;
-  --accent-light: #e0f2fe;
+  // Colors - Dark Mode
+  --primary: #7c3aed;
+  --primary-dark: #6d28d9;
+  --primary-light: rgba(124, 58, 237, 0.15);
+  --primary-glow: rgba(124, 58, 237, 0.25);
+  --accent: #06b6d4;
+  --accent-light: rgba(6, 182, 212, 0.15);
+  --accent-2: #f472b6;
+  --accent-2-light: rgba(244, 114, 182, 0.15);
 
-  // Neutrals
+  // Backgrounds
+  --bg: #080b14;
+  --bg-card: #0e1220;
+  --bg-section: #0b0f1a;
+  --bg-elevated: #141826;
+  --bg-hover: #1a2030;
   --white: #ffffff;
-  --bg: #f8faff;
-  --bg-card: #ffffff;
-  --bg-section: #f0f5ff;
-  --border: #e2e8f4;
-  --border-strong: #c7d6f0;
+
+  // Borders
+  --border: rgba(255, 255, 255, 0.07);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --border-accent: rgba(124, 58, 237, 0.4);
 
   // Text
-  --text-primary: #0f1724;
-  --text-secondary: #4a5568;
-  --text-muted: #718096;
-  --text-light: #a0aec0;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-light: #475569;
 
   // Typography
   --font-display: 'Syne', sans-serif;
   --font-body: 'DM Sans', sans-serif;
 
   // Spacing
-  --section-padding: 100px 0;
+  --section-padding: 120px 0;
   --container-max: 1200px;
 
   // Shadows
-  --shadow-sm: 0 2px 8px rgba(26, 86, 219, 0.08);
-  --shadow-md: 0 8px 32px rgba(26, 86, 219, 0.12);
-  --shadow-lg: 0 20px 60px rgba(26, 86, 219, 0.16);
-  --shadow-card: 0 4px 24px rgba(15, 23, 36, 0.08);
-  --shadow-hover: 0 12px 40px rgba(26, 86, 219, 0.20);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.6);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 12px 40px rgba(124, 58, 237, 0.25);
+  --shadow-glow: 0 0 40px rgba(124, 58, 237, 0.2);
 
   // Border Radius
   --radius-sm: 8px;
@@ -56,6 +65,12 @@
   // Z-index
   --z-navbar: 1000;
   --z-modal: 2000;
+
+  // Gradients
+  --gradient-primary: linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%);
+  --gradient-accent: linear-gradient(135deg, #f472b6 0%, #7c3aed 100%);
+  --gradient-hero: radial-gradient(ellipse at top, rgba(124, 58, 237, 0.15) 0%, transparent 70%),
+                   radial-gradient(ellipse at bottom right, rgba(6, 182, 212, 0.1) 0%, transparent 60%);
 }
 
 // Reset & Base
@@ -145,22 +160,23 @@ input, textarea, select {
 // Section Header
 .section-header {
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: 72px;
 
   .section-eyebrow {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     font-family: var(--font-display);
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--primary);
     background: var(--primary-light);
-    padding: 6px 16px;
+    border: 1px solid var(--border-accent);
+    padding: 6px 18px;
     border-radius: var(--radius-full);
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 
     &::before {
       content: '';
@@ -168,6 +184,7 @@ input, textarea, select {
       height: 6px;
       background: var(--primary);
       border-radius: 50%;
+      box-shadow: 0 0 8px var(--primary);
     }
   }
 
@@ -176,7 +193,7 @@ input, textarea, select {
     font-weight: 800;
     color: var(--text-primary);
     margin-bottom: 16px;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
   }
 
   p {
@@ -194,7 +211,7 @@ input, textarea, select {
   align-items: center;
   gap: 8px;
   padding: 14px 28px;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-md);
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 0.95rem;
@@ -204,14 +221,14 @@ input, textarea, select {
   white-space: nowrap;
 
   &-primary {
-    background: var(--primary);
+    background: var(--gradient-primary);
     color: var(--white);
-    box-shadow: 0 4px 20px rgba(26, 86, 219, 0.35);
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
 
     &:hover {
-      background: var(--primary-dark);
       transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(26, 86, 219, 0.45);
+      box-shadow: 0 8px 32px rgba(124, 58, 237, 0.55);
+      filter: brightness(1.1);
     }
 
     &:active {
@@ -221,24 +238,25 @@ input, textarea, select {
 
   &-outline {
     background: transparent;
-    color: var(--primary);
-    border: 2px solid var(--primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-strong);
 
     &:hover {
-      background: var(--primary-light);
+      background: var(--bg-elevated);
+      border-color: var(--primary);
+      color: var(--primary);
       transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
     }
   }
 
   &-ghost {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.06);
     color: var(--white);
-    border: 1px solid rgba(255,255,255,0.25);
+    border: 1px solid rgba(255,255,255,0.12);
     backdrop-filter: blur(8px);
 
     &:hover {
-      background: rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.1);
       transform: translateY(-2px);
     }
   }
@@ -320,6 +338,26 @@ input, textarea, select {
   50% { background-position: 100% 50%; }
 }
 
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(140px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(140px) rotate(-360deg); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 // Animation utility classes
 .animate-fade-up {
   animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
@@ -363,6 +401,7 @@ input, textarea, select {
   padding: 4px 12px;
   background: var(--primary-light);
   color: var(--primary);
+  border: 1px solid var(--border-accent);
   border-radius: var(--radius-full);
   font-size: 0.8rem;
   font-weight: 500;
@@ -372,13 +411,13 @@ input, textarea, select {
 
 // Dot decoration
 .dot-grid {
-  background-image: radial-gradient(circle, var(--border) 1.5px, transparent 1.5px);
+  background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1.5px, transparent 1.5px);
   background-size: 24px 24px;
 }
 
 // Gradient text
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -386,7 +425,7 @@ input, textarea, select {
 
 // Scrollbar
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
   background: var(--bg-section);
@@ -415,10 +454,10 @@ input, textarea, select {
 // Responsive utilities
 @media (max-width: 768px) {
   .section {
-    padding: 72px 0;
+    padding: 80px 0;
   }
   .section-header {
-    margin-bottom: 48px;
+    margin-bottom: 52px;
     h2 {
       font-size: 1.9rem;
     }
@@ -431,6 +470,17 @@ input, textarea, select {
 
 @media (max-width: 480px) {
   .section {
-    padding: 56px 0;
+    padding: 60px 0;
   }
+}
+
+// Noise texture overlay (subtle)
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.018;
+  pointer-events: none;
+  z-index: 9999;
 }
